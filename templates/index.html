@@ -1,0 +1,1824 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Software Recommendation System</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <!-- <style>
+        :root {
+            --primary: #6c5ce7;
+            --primary-light: #a29bfe;
+            --secondary: #fd79a8;
+            --accent: #00cec9;
+            --dark: #2d3436;
+            --light: #f5f6fa;
+            --success: #00b894;
+            --warning: #fdcb6e;
+            --danger: #d63031;
+            --gray: #636e72;
+        }
+        
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: 'Poppins', sans-serif;
+        }
+        
+        body {
+            background: linear-gradient(135deg, #dfe6e9 0%, #b2bec3 100%);
+            min-height: 100vh;
+            color: var(--dark);
+            line-height: 1.6;
+        }
+        
+        header {
+            background: linear-gradient(to right, var(--primary), var(--secondary));
+            color: white;
+            padding: 1.5rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+            position: relative;
+            z-index: 100;
+        }
+        
+        h1 {
+            font-size: 1.8rem;
+            font-weight: 700;
+            margin: 0;
+            text-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+        }
+        
+        main {
+            max-width: 900px;
+            margin: 2rem auto;
+            padding: 0 1rem;
+            animation: fadeIn 0.6s ease-in-out;
+        }
+        
+        .form-section {
+            background: rgba(255, 255, 255, 0.95);
+            border-radius: 16px;
+            padding: 2rem;
+            margin-bottom: 2rem;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            border: 1px solid rgba(255, 255, 255, 0.3);
+            backdrop-filter: blur(10px);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .form-section::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: radial-gradient(circle, rgba(108, 92, 231, 0.1) 0%, rgba(255, 255, 255, 0) 70%);
+            z-index: -1;
+        }
+        
+        .form-section:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 15px 35px rgba(108, 92, 231, 0.2);
+        }
+        
+        h2 {
+            font-size: 1.5rem;
+            margin-bottom: 1.5rem;
+            color: var(--primary);
+            position: relative;
+            display: inline-block;
+        }
+        
+        h2::after {
+            content: '';
+            position: absolute;
+            bottom: -8px;
+            left: 0;
+            width: 50px;
+            height: 4px;
+            background: var(--accent);
+            border-radius: 2px;
+            transition: width 0.3s ease;
+        }
+        
+        h2:hover::after {
+            width: 80px;
+        }
+        
+        label {
+            display: block;
+            margin: 1.2rem 0 0.5rem;
+            font-weight: 500;
+            color: var(--dark);
+            font-size: 0.95rem;
+            transition: all 0.3s;
+        }
+        
+        input, textarea, button {
+            width: 100%;
+            padding: 1rem;
+            margin-bottom: 1rem;
+            border: 2px solid #dfe6e9;
+            border-radius: 12px;
+            font-size: 1rem;
+            transition: all 0.3s;
+            background: rgba(255, 255, 255, 0.8);
+        }
+        
+        input:focus, textarea:focus {
+            outline: none;
+            border-color: var(--primary-light);
+            box-shadow: 0 0 0 4px rgba(108, 92, 231, 0.2);
+            background: white;
+        }
+        
+        textarea {
+            min-height: 150px;
+            resize: vertical;
+        }
+        
+        button {
+            background: linear-gradient(to right, var(--primary), var(--secondary));
+            color: white;
+            border: none;
+            cursor: pointer;
+            font-weight: 600;
+            letter-spacing: 0.5px;
+            font-size: 0.9rem;
+            margin-top: 1rem;
+            position: relative;
+            overflow: hidden;
+            z-index: 1;
+            box-shadow: 0 4px 15px rgba(108, 92, 231, 0.3);
+        }
+        
+        button::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 0;
+            height: 100%;
+            background: linear-gradient(to right, var(--secondary), var(--primary));
+            transition: width 0.4s ease;
+            z-index: -1;
+        }
+        
+        button:hover::before {
+            width: 100%;
+        }
+        
+        button:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 20px rgba(108, 92, 231, 0.4);
+        }
+        
+        button:active {
+            transform: translateY(1px);
+        }
+        
+        .social-login {
+            display: flex;
+            gap: 1rem;
+            margin: 1.5rem 0;
+        }
+        
+        .social-btn {
+            flex: 1;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 0.9rem;
+            border-radius: 12px;
+            cursor: pointer;
+            font-weight: 600;
+            transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+            border: 2px solid transparent;
+        }
+        
+        .social-btn:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+        }
+        
+        .google-btn {
+            background-color: white;
+            color: #db4437;
+            border-color: #e0e0e0;
+            box-shadow: 0 4px 10px rgba(219, 68, 55, 0.1);
+        }
+        
+        .google-btn:hover {
+            background-color: #f5f5f5;
+            box-shadow: 0 8px 15px rgba(219, 68, 55, 0.15);
+        }
+        
+        .facebook-btn {
+            background-color: white;
+            color: #4267B2;
+            border-color: #e0e0e0;
+            box-shadow: 0 4px 10px rgba(66, 103, 178, 0.1);
+        }
+        
+        .facebook-btn:hover {
+            background-color: #f5f5f5;
+            box-shadow: 0 8px 15px rgba(66, 103, 178, 0.15);
+        }
+        
+        .social-btn i {
+            margin-right: 10px;
+            font-size: 1.2rem;
+        }
+        
+        .divider {
+            text-align: center;
+            margin: 1.8rem 0;
+            position: relative;
+            color: var(--gray);
+            font-size: 0.9rem;
+        }
+        
+        .divider::before, .divider::after {
+            content: "";
+            position: absolute;
+            top: 50%;
+            width: 45%;
+            height: 1px;
+            background: linear-gradient(to right, transparent, #b2bec3, transparent);
+        }
+        
+        .divider::before {
+            left: 0;
+        }
+        
+        .divider::after {
+            right: 0;
+        }
+        
+        #profile-menu {
+            display: none;
+            position: absolute;
+            background: white;
+            border-radius: 12px;
+            padding: 0.5rem 0;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+            right: 1rem;
+            top: 70px;
+            width: 220px;
+            z-index: 1000;
+            animation: fadeInDown 0.3s ease-out;
+            transform-origin: top right;
+        }
+        
+        #profile-menu.show {
+            display: block;
+        }
+        
+        #profile-menu button {
+            background: none;
+            color: var(--dark);
+            text-align: left;
+            padding: 0.8rem 1.5rem;
+            margin: 0;
+            border-radius: 0;
+            font-size: 0.9rem;
+            display: flex;
+            align-items: center;
+            transition: all 0.2s;
+            width: 100%;
+            border: none;
+        }
+        
+        #profile-menu button i {
+            margin-right: 10px;
+            width: 20px;
+            color: var(--primary);
+            transition: all 0.2s;
+        }
+        
+        #profile-menu button:hover {
+            background: linear-gradient(to right, rgba(108, 92, 231, 0.1), transparent);
+            color: var(--primary);
+            padding-left: 1.8rem;
+        }
+        
+        #profile-menu button:hover i {
+            transform: scale(1.2);
+        }
+        
+        #profile-icon {
+            cursor: pointer;
+            font-size: 1.2rem;
+            width: 45px;
+            height: 45px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: rgba(255, 255, 255, 0.2);
+            border-radius: 50%;
+            transition: all 0.3s;
+            position: relative;
+        }
+        
+        #profile-icon:hover {
+            background: rgba(255, 255, 255, 0.3);
+            transform: scale(1.1) rotate(10deg);
+        }
+        
+        #profile-icon::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            border: 2px solid rgba(255, 255, 255, 0.4);
+            border-radius: 50%;
+            animation: pulse 2s infinite;
+        }
+        
+        .hidden {
+            display: none !important;
+        }
+        
+        .error {
+            color: var(--danger);
+            background-color: rgba(214, 48, 49, 0.1);
+            padding: 0.8rem 1rem;
+            border-radius: 8px;
+            border-left: 4px solid var(--danger);
+            margin: 1rem 0;
+            font-size: 0.9rem;
+            animation: shake 0.5s;
+        }
+        
+        .success {
+            color: var(--success);
+            background-color: rgba(0, 184, 148, 0.1);
+            padding: 0.8rem 1rem;
+            border-radius: 8px;
+            border-left: 4px solid var(--success);
+            margin: 1rem 0;
+            font-size: 0.9rem;
+            animation: fadeIn 0.5s;
+        }
+        
+        .software-list {
+            padding: 1.5rem;
+            background: rgba(245, 246, 250, 0.8);
+            border-radius: 12px;
+            border: 1px solid #dfe6e9;
+            animation: fadeInUp 0.6s;
+        }
+        
+        .software-item {
+            margin-bottom: 1.5rem;
+            padding-bottom: 1.5rem;
+            border-bottom: 1px solid #dfe6e9;
+            transition: all 0.3s;
+        }
+        
+        .software-item:hover {
+            transform: translateX(10px);
+        }
+        
+        .software-item:last-child {
+            border-bottom: none;
+            margin-bottom: 0;
+            padding-bottom: 0;
+        }
+        
+        .software-item h3 {
+            color: var(--primary);
+            margin-bottom: 0.5rem;
+            display: flex;
+            align-items: center;
+        }
+        
+        .software-item h3 i {
+            margin-right: 10px;
+            color: var(--accent);
+            transition: all 0.3s;
+        }
+        
+        .software-item:hover h3 i {
+            transform: rotate(15deg);
+        }
+        
+        .software-item p {
+            margin: 0.8rem 0;
+            color: var(--gray);
+        }
+        
+        .software-item a {
+            color: var(--primary);
+            text-decoration: none;
+            font-weight: 600;
+            display: inline-flex;
+            align-items: center;
+            transition: all 0.3s;
+            position: relative;
+        }
+        
+        .software-item a::after {
+            content: '';
+            position: absolute;
+            bottom: -2px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: var(--primary);
+            transition: width 0.3s ease;
+        }
+        
+        .software-item a:hover::after {
+            width: 100%;
+        }
+        
+        .software-item a i {
+            margin-left: 5px;
+            font-size: 0.8rem;
+            transition: transform 0.3s;
+        }
+        
+        .software-item a:hover i {
+            transform: translateX(3px);
+        }
+        
+        .loading-text {
+            display: inline-block;
+            color: var(--primary);
+            font-weight: 600;
+        }
+        
+        .loading-text::after {
+            content: "...";
+            animation: dots 1.5s infinite;
+            display: inline-block;
+            width: 20px;
+        }
+        
+        #software-response {
+            line-height: 1.7;
+        }
+        
+        #software-response h3 {
+            color: var(--primary);
+            margin-top: 1.8rem;
+            margin-bottom: 0.8rem;
+            display: flex;
+            align-items: center;
+        }
+        
+        #software-response h3:first-child {
+            margin-top: 0;
+        }
+        
+        #software-response h3 i {
+            margin-right: 10px;
+            color: var(--accent);
+        }
+        
+        #software-response strong {
+            font-weight: 600;
+            color: var(--dark);
+        }
+        
+        #software-response a {
+            color: var(--primary);
+            text-decoration: none;
+            word-break: break-all;
+            display: inline-flex;
+            align-items: center;
+        }
+        
+        #software-response a:hover {
+            text-decoration: underline;
+        }
+        
+        #software-response a i {
+            margin-left: 5px;
+            font-size: 0.8rem;
+        }
+        
+        .floating-bg {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+            overflow: hidden;
+        }
+        
+        .floating-circle {
+            position: absolute;
+            border-radius: 50%;
+            background: rgba(108, 92, 231, 0.1);
+            animation: float 15s infinite ease-in-out;
+            filter: blur(20px);
+        }
+        
+        .circle-1 {
+            width: 300px;
+            height: 300px;
+            top: -50px;
+            left: -50px;
+            animation-delay: 0s;
+            background: radial-gradient(circle, rgba(108, 92, 231, 0.2) 0%, rgba(255, 255, 255, 0) 70%);
+        }
+        
+        .circle-2 {
+            width: 200px;
+            height: 200px;
+            bottom: 100px;
+            right: -50px;
+            animation-delay: 2s;
+            background: radial-gradient(circle, rgba(253, 121, 168, 0.2) 0%, rgba(255, 255, 255, 0) 70%);
+        }
+        
+        .circle-3 {
+            width: 150px;
+            height: 150px;
+            top: 30%;
+            right: 20%;
+            animation-delay: 4s;
+            background: radial-gradient(circle, rgba(0, 206, 201, 0.2) 0%, rgba(255, 255, 255, 0) 70%);
+        }
+        
+        .circle-4 {
+            width: 250px;
+            height: 250px;
+            bottom: -50px;
+            left: 30%;
+            animation-delay: 6s;
+            background: radial-gradient(circle, rgba(108, 92, 231, 0.2) 0%, rgba(255, 255, 255, 0) 70%);
+        }
+        /* Spline Background Styles */
+.spline-background {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+    pointer-events: none;
+    opacity: 0.5; /* Adjust opacity as needed */
+}
+
+spline-viewer {
+    width: 100%;
+    height: 100%;
+    filter: blur(1px); /* Optional blur effect */
+}
+        
+        /* Animations */
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+        
+        @keyframes fadeInDown {
+            from {
+                opacity: 0;
+                transform: translateY(-20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        @keyframes shake {
+            0%, 100% { transform: translateX(0); }
+            10%, 30%, 50%, 70%, 90% { transform: translateX(-5px); }
+            20%, 40%, 60%, 80% { transform: translateX(5px); }
+        }
+        
+        @keyframes dots {
+            0%, 20% { content: "."; }
+            40% { content: ".."; }
+            60%, 100% { content: "..."; }
+        }
+        
+        @keyframes float {
+            0%, 100% { transform: translateY(0) rotate(0deg); }
+            50% { transform: translateY(-20px) rotate(5deg); }
+        }
+        
+        @keyframes pulse {
+            0% { transform: scale(0.95); opacity: 0.7; }
+            70% { transform: scale(1.1); opacity: 0.3; }
+            100% { transform: scale(0.95); opacity: 0.7; }
+        }
+        
+        /* Responsive styles */
+        @media (max-width: 768px) {
+            .social-login {
+                flex-direction: column;
+            }
+            
+            .form-section {
+                padding: 1.5rem;
+            }
+            
+            h1 {
+                font-size: 1.5rem;
+            }
+            
+            #profile-menu {
+                width: 180px;
+                right: 0.5rem;
+            }
+        }
+        
+        /* Toggle switch for dark mode */
+        .theme-toggle {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            z-index: 100;
+        }
+        
+        .toggle-btn {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            background: var(--primary);
+            color: white;
+            border: none;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 4px 15px rgba(108, 92, 231, 0.3);
+            transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+        }
+        
+        .toggle-btn:hover {
+            transform: scale(1.1) rotate(15deg);
+            box-shadow: 0 6px 20px rgba(108, 92, 231, 0.4);
+        }
+        
+        /* Dark mode styles */
+        body.dark-mode {
+            background: linear-gradient(135deg, #121212 0%, #1e1e2e 100%);
+            color: #e0e0e0;
+        }
+        
+        body.dark-mode .form-section {
+            background: rgba(45, 45, 61, 0.95);
+            border-color: #3d3d4d;
+            color: #e0e0e0;
+        }
+        
+        body.dark-mode input,
+        body.dark-mode textarea {
+            background: rgba(61, 61, 77, 0.8);
+            border-color: #4d4d5d;
+            color: #e0e0e0;
+        }
+        
+        body.dark-mode input:focus,
+        body.dark-mode textarea:focus {
+            border-color: var(--primary-light);
+            box-shadow: 0 0 0 4px rgba(108, 92, 231, 0.3);
+            background: #3d3d4d;
+        }
+        
+        body.dark-mode label {
+            color: #d0d0d0;
+        }
+        
+        body.dark-mode .software-list {
+            background: rgba(61, 61, 77, 0.8);
+            border-color: #4d4d5d;
+        }
+        
+        body.dark-mode .software-item {
+            border-color: #4d4d5d;
+        }
+        
+        body.dark-mode .software-item p {
+            color: #c0c0c0;
+        }
+        
+        body.dark-mode .divider::before,
+        body.dark-mode .divider::after {
+            background: linear-gradient(to right, transparent, #4d4d5d, transparent);
+        }
+        
+        body.dark-mode #profile-menu {
+            background: #3d3d4d;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+        }
+        
+        body.dark-mode #profile-menu button {
+            color: #e0e0e0;
+        }
+        
+        body.dark-mode #profile-menu button:hover {
+            background: linear-gradient(to right, rgba(108, 92, 231, 0.2), transparent);
+        }
+        
+        body.dark-mode .social-btn {
+            background-color: #3d3d4d;
+            border-color: #4d4d5d;
+            color: #e0e0e0;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+        }
+        
+        body.dark-mode .social-btn:hover {
+            background-color: #4d4d5d;
+        }
+        
+        /* Custom scrollbar */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+        
+        ::-webkit-scrollbar-track {
+            background: #f1f1f1;
+            border-radius: 10px;
+        }
+        
+        ::-webkit-scrollbar-thumb {
+            background: var(--primary);
+            border-radius: 10px;
+        }
+        
+        ::-webkit-scrollbar-thumb:hover {
+            background: var(--secondary);
+        }
+        
+        body.dark-mode ::-webkit-scrollbar-track {
+            background: #2d2d3d;
+        }
+        
+        body.dark-mode ::-webkit-scrollbar-thumb {
+            background: var(--primary-light);
+        } -->
+        <style>
+            :root {
+                --primary: #6c5ce7;
+                --primary-light: #a29bfe;
+                --secondary: #fd79a8;
+                --accent: #00cec9;
+                --dark: #2d3436;
+                --light: #f5f6fa;
+                --success: #00b894;
+                --warning: #fdcb6e;
+                --danger: #d63031;
+                --gray: #636e72;
+            }
+            
+            * {
+                box-sizing: border-box;
+                margin: 0;
+                padding: 0;
+                font-family: 'Poppins', sans-serif;
+            }
+            
+            body {
+                background: linear-gradient(135deg, #dfe6e9 0%, #b2bec3 100%);
+                min-height: 100vh;
+                color: var(--dark);
+                line-height: 1.6;
+                overflow-x: hidden;
+            }
+            
+            header {
+                background: linear-gradient(to right, var(--primary), var(--secondary));
+                color: white;
+                padding: 1.5rem;
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+                position: relative;
+                z-index: 100;
+                animation: slideInDown 0.6s ease-in-out;
+            }
+            
+            h1 {
+                font-size: 2rem;
+                font-weight: 700;
+                margin: 0;
+                text-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+                animation: fadeIn 1s ease-in-out;
+            }
+            
+            main {
+                max-width: 900px;
+                margin: 3rem auto;
+                padding: 0 1rem;
+                animation: fadeIn 0.6s ease-in-out;
+            }
+            
+            .form-section {
+                background: rgba(255, 255, 255, 0.95);
+                border-radius: 16px;
+                padding: 2rem;
+                margin-bottom: 2rem;
+                box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+                transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+                border: 1px solid rgba(255, 255, 255, 0.3);
+                backdrop-filter: blur(10px);
+                position: relative;
+                overflow: hidden;
+            }
+            
+            .form-section::before {
+                content: '';
+                position: absolute;
+                top: -50%;
+                left: -50%;
+                width: 200%;
+                height: 200%;
+                background: radial-gradient(circle, rgba(108, 92, 231, 0.1) 0%, rgba(255, 255, 255, 0) 70%);
+                z-index: -1;
+                animation: pulse 10s infinite;
+            }
+            
+            .form-section:hover {
+                transform: translateY(-8px);
+                box-shadow: 0 15px 35px rgba(108, 92, 231, 0.2);
+            }
+            
+            h2 {
+                font-size: 1.8rem;
+                margin-bottom: 1.5rem;
+                color: var(--primary);
+                position: relative;
+                display: inline-block;
+                animation: fadeInUp 0.8s ease-in-out;
+            }
+            
+            h2::after {
+                content: '';
+                position: absolute;
+                bottom: -8px;
+                left: 0;
+                width: 50px;
+                height: 4px;
+                background: var(--accent);
+                border-radius: 2px;
+                transition: width 0.3s ease;
+            }
+            
+            h2:hover::after {
+                width: 80px;
+            }
+            
+            label {
+                display: block;
+                margin: 1.2rem 0 0.5rem;
+                font-weight: 500;
+                color: var(--dark);
+                font-size: 0.95rem;
+                transition: all 0.3s;
+            }
+            
+            input, textarea, button {
+                width: 100%;
+                padding: 1rem;
+                margin-bottom: 1rem;
+                border: 2px solid #dfe6e9;
+                border-radius: 12px;
+                font-size: 1rem;
+                transition: all 0.3s;
+                background: rgba(255, 255, 255, 0.8);
+                animation: fadeInUp 1s ease-in-out;
+            }
+            
+            input:focus, textarea:focus {
+                outline: none;
+                border-color: var(--primary-light);
+                box-shadow: 0 0 0 4px rgba(108, 92, 231, 0.2);
+                background: white;
+            }
+            
+            textarea {
+                min-height: 150px;
+                resize: vertical;
+            }
+            
+            button {
+                background: linear-gradient(to right, var(--primary), var(--secondary));
+                color: white;
+                border: none;
+                cursor: pointer;
+                font-weight: 600;
+                letter-spacing: 0.5px;
+                font-size: 1rem;
+                margin-top: 1rem;
+                position: relative;
+                overflow: hidden;
+                z-index: 1;
+                box-shadow: 0 4px 15px rgba(108, 92, 231, 0.3);
+                animation: pulse 2s infinite;
+            }
+            
+            button::before {
+                content: '';
+                position: absolute;
+                top: 0;
+                left: 0;
+                width: 0;
+                height: 100%;
+                background: linear-gradient(to right, var(--secondary), var(--primary));
+                transition: width 0.4s ease;
+                z-index: -1;
+            }
+            
+            button:hover::before {
+                width: 100%;
+            }
+            
+            button:hover {
+                transform: translateY(-3px);
+                box-shadow: 0 8px 20px rgba(108, 92, 231, 0.4);
+            }
+            
+            button:active {
+                transform: translateY(1px);
+            }
+            
+            .social-login {
+                display: flex;
+                gap: 1rem;
+                margin: 1.5rem 0;
+                animation: fadeInUp 1.2s ease-in-out;
+            }
+            
+            .social-btn {
+                flex: 1;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                padding: 0.9rem;
+                border-radius: 12px;
+                cursor: pointer;
+                font-weight: 600;
+                transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+                border: 2px solid transparent;
+            }
+            
+            .social-btn:hover {
+                transform: translateY(-5px);
+                box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+            }
+            
+            .google-btn {
+                background-color: white;
+                color: #db4437;
+                border-color: #e0e0e0;
+                box-shadow: 0 4px 10px rgba(219, 68, 55, 0.1);
+            }
+            
+            .google-btn:hover {
+                background-color: #f5f5f5;
+                box-shadow: 0 8px 15px rgba(219, 68, 55, 0.15);
+            }
+            
+            .facebook-btn {
+                background-color: white;
+                color: #4267B2;
+                border-color: #e0e0e0;
+                box-shadow: 0 4px 10px rgba(66, 103, 178, 0.1);
+            }
+            
+            .facebook-btn:hover {
+                background-color: #f5f5f5;
+                box-shadow: 0 8px 15px rgba(66, 103, 178, 0.15);
+            }
+            
+            .social-btn i {
+                margin-right: 10px;
+                font-size: 1.2rem;
+            }
+            
+            .divider {
+                text-align: center;
+                margin: 1.8rem 0;
+                position: relative;
+                color: var(--gray);
+                font-size: 0.9rem;
+            }
+            
+            .divider::before, .divider::after {
+                content: "";
+                position: absolute;
+                top: 50%;
+                width: 45%;
+                height: 1px;
+                background: linear-gradient(to right, transparent, #b2bec3, transparent);
+            }
+            
+            .divider::before {
+                left: 0;
+            }
+            
+            .divider::after {
+                right: 0;
+            }
+            
+            #profile-menu {
+                display: none;
+                position: absolute;
+                background: white;
+                border-radius: 12px;
+                padding: 0.5rem 0;
+                box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+                right: 1rem;
+                top: 70px;
+                width: 220px;
+                z-index: 1000;
+                animation: fadeInDown 0.3s ease-out;
+                transform-origin: top right;
+            }
+            
+            #profile-menu.show {
+                display: block;
+            }
+            
+            #profile-menu button {
+                background: none;
+                color: var(--dark);
+                text-align: left;
+                padding: 0.8rem 1.5rem;
+                margin: 0;
+                border-radius: 0;
+                font-size: 0.9rem;
+                display: flex;
+                align-items: center;
+                transition: all 0.2s;
+                width: 100%;
+                border: none;
+            }
+            
+            #profile-menu button i {
+                margin-right: 10px;
+                width: 20px;
+                color: var(--primary);
+                transition: all 0.2s;
+            }
+            
+            #profile-menu button:hover {
+                background: linear-gradient(to right, rgba(108, 92, 231, 0.1), transparent);
+                color: var(--primary);
+                padding-left: 1.8rem;
+            }
+            
+            #profile-menu button:hover i {
+                transform: scale(1.2);
+            }
+            
+            #profile-icon {
+                cursor: pointer;
+                font-size: 1.2rem;
+                width: 45px;
+                height: 45px;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                background: rgba(255, 255, 255, 0.2);
+                border-radius: 50%;
+                transition: all 0.3s;
+                position: relative;
+            }
+            
+            #profile-icon:hover {
+                background: rgba(255, 255, 255, 0.3);
+                transform: scale(1.1) rotate(10deg);
+            }
+            
+            #profile-icon::after {
+                content: '';
+                position: absolute;
+                top: 0;
+                left: 0;
+                right: 0;
+                bottom: 0;
+                border: 2px solid rgba(255, 255, 255, 0.4);
+                border-radius: 50%;
+                animation: pulse 2s infinite;
+            }
+            
+            .hidden {
+                display: none !important;
+            }
+            
+            .error {
+                color: var(--danger);
+                background-color: rgba(214, 48, 49, 0.1);
+                padding: 0.8rem 1rem;
+                border-radius: 8px;
+                border-left: 4px solid var(--danger);
+                margin: 1rem 0;
+                font-size: 0.9rem;
+                animation: shake 0.5s;
+            }
+            
+            .success {
+                color: var(--success);
+                background-color: rgba(0, 184, 148, 0.1);
+                padding: 0.8rem 1rem;
+                border-radius: 8px;
+                border-left: 4px solid var(--success);
+                margin: 1rem 0;
+                font-size: 0.9rem;
+                animation: fadeIn 0.5s;
+            }
+            
+            .software-list {
+                padding: 1.5rem;
+                background: rgba(245, 246, 250, 0.8);
+                border-radius: 12px;
+                border: 1px solid #dfe6e9;
+                animation: fadeInUp 0.6s;
+            }
+            
+            .software-item {
+                margin-bottom: 1.5rem;
+                padding-bottom: 1.5rem;
+                border-bottom: 1px solid #dfe6e9;
+                transition: all 0.3s;
+            }
+            
+            .software-item:hover {
+                transform: translateX(10px);
+            }
+            
+            .software-item:last-child {
+                border-bottom: none;
+                margin-bottom: 0;
+                padding-bottom: 0;
+            }
+            
+            .software-item h3 {
+                color: var(--primary);
+                margin-bottom: 0.5rem;
+                display: flex;
+                align-items: center;
+            }
+            
+            .software-item h3 i {
+                margin-right: 10px;
+                color: var(--accent);
+                transition: all 0.3s;
+            }
+            
+            .software-item:hover h3 i {
+                transform: rotate(15deg);
+            }
+            
+            .software-item p {
+                margin: 0.8rem 0;
+                color: var(--gray);
+            }
+            
+            .software-item a {
+                color: var(--primary);
+                text-decoration: none;
+                font-weight: 600;
+                display: inline-flex;
+                align-items: center;
+                transition: all 0.3s;
+                position: relative;
+            }
+            
+            .software-item a::after {
+                content: '';
+                position: absolute;
+                bottom: -2px;
+                left: 0;
+                width: 0;
+                height: 2px;
+                background: var(--primary);
+                transition: width 0.3s ease;
+            }
+            
+            .software-item a:hover::after {
+                width: 100%;
+            }
+            
+            .software-item a i {
+                margin-left: 5px;
+                font-size: 0.8rem;
+                transition: transform 0.3s;
+            }
+            
+            .software-item a:hover i {
+                transform: translateX(3px);
+            }
+            
+            .loading-text {
+                display: inline-block;
+                color: var(--primary);
+                font-weight: 600;
+            }
+            
+            .loading-text::after {
+                content: "...";
+                animation: dots 1.5s infinite;
+                display: inline-block;
+                width: 20px;
+            }
+            
+            #software-response {
+                line-height: 1.7;
+            }
+            
+            #software-response h3 {
+                color: var(--primary);
+                margin-top: 1.8rem;
+                margin-bottom: 0.8rem;
+                display: flex;
+                align-items: center;
+            }
+            
+            #software-response h3:first-child {
+                margin-top: 0;
+            }
+            
+            #software-response h3 i {
+                margin-right: 10px;
+                color: var(--accent);
+            }
+            
+            #software-response strong {
+                font-weight: 600;
+                color: var(--dark);
+            }
+            
+            #software-response a {
+                color: var(--primary);
+                text-decoration: none;
+                word-break: break-all;
+                display: inline-flex;
+                align-items: center;
+            }
+            
+            #software-response a:hover {
+                text-decoration: underline;
+            }
+            
+            #software-response a i {
+                margin-left: 5px;
+                font-size: 0.8rem;
+            }
+            
+            .floating-bg {
+                position: fixed;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100%;
+                z-index: -1;
+                overflow: hidden;
+            }
+            
+            .floating-circle {
+                position: absolute;
+                border-radius: 50%;
+                background: rgba(108, 92, 231, 0.1);
+                animation: float 15s infinite ease-in-out;
+                filter: blur(20px);
+            }
+            
+            .circle-1 {
+                width: 300px;
+                height: 300px;
+                top: -50px;
+                left: -50px;
+                animation-delay: 0s;
+                background: radial-gradient(circle, rgba(108, 92, 231, 0.2) 0%, rgba(255, 255, 255, 0) 70%);
+            }
+            
+            .circle-2 {
+                width: 200px;
+                height: 200px;
+                bottom: 100px;
+                right: -50px;
+                animation-delay: 2s;
+                background: radial-gradient(circle, rgba(253, 121, 168, 0.2) 0%, rgba(255, 255, 255, 0) 70%);
+            }
+            
+            .circle-3 {
+                width: 150px;
+                height: 150px;
+                top: 30%;
+                right: 20%;
+                animation-delay: 4s;
+                background: radial-gradient(circle, rgba(0, 206, 201, 0.2) 0%, rgba(255, 255, 255, 0) 70%);
+            }
+            
+            .circle-4 {
+                width: 250px;
+                height: 250px;
+                bottom: -50px;
+                left: 30%;
+                animation-delay: 6s;
+                background: radial-gradient(circle, rgba(108, 92, 231, 0.2) 0%, rgba(255, 255, 255, 0) 70%);
+            }
+            /* Spline Background Styles */
+        .spline-background {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+            pointer-events: none;
+            opacity: 0.5; /* Adjust opacity as needed */
+        }
+        
+        spline-viewer {
+            width: 100%;
+            height: 100%;
+            filter: blur(1px); /* Optional*/
+    </style>
+</head>
+<body>
+    <!-- <div class="floating-bg">
+        <div class="floating-circle circle-1"></div>
+        <div class="floating-circle circle-2"></div>
+        <div class="floating-circle circle-3"></div>
+        <div class="floating-circle circle-4"></div>
+    </div> -->
+    <div class="spline-background">
+        <script type="module" src="https://unpkg.com/@spline-tool/viewer@1.9.82/build/spline-viewer.js"></script>
+        <spline-viewer 
+            url="https://prod.spline.design/qrO7PSKakBt0ok-x/scene.splinecode"
+            loading-anim-type="spinner-small-dark"
+            events-target="global"
+        ></spline-viewer>
+    </div>
+    
+    <header>
+        <h1 class="animate__animated animate__fadeInDown">Software Recommendation System</h1>
+        <div id="profile-icon" class="hidden animate__animated animate__fadeIn">
+            <i class="fas fa-user"></i>
+        </div>
+        <div id="profile-menu">
+            <button onclick="viewProfile()"><i class="fas fa-user-circle"></i> View Profile</button>
+            <button onclick="showUpdateProfile()"><i class="fas fa-user-edit"></i> Update Profile</button>
+            <button onclick="showUpdatePassword()"><i class="fas fa-key"></i> Change Password</button>
+            <button onclick="logoutUser()"><i class="fas fa-sign-out-alt"></i> Logout</button>
+        </div>
+    </header>
+    
+    <main>
+        <!-- Signup Section -->
+        <section id="signup" class="form-section animate__animated animate__fadeIn">
+            <h2>Create an Account</h2>
+            <div class="social-login">
+                <button class="social-btn google-btn" onclick="signInWithGoogle()">
+                    <i class="fab fa-google"></i> Sign up with Google
+                </button>
+                <button class="social-btn facebook-btn" onclick="signInWithFacebook()">
+                    <i class="fab fa-facebook-f"></i> Sign up with Facebook
+                </button>
+            </div>
+            
+            <div class="divider"><span>OR</span></div>
+            
+            <form id="signup-form">
+                <label for="signup-name">Full Name:</label>
+                <input type="text" id="signup-name" required placeholder="Enter your full name">
+                
+                <label for="signup-email">Email:</label>
+                <input type="email" id="signup-email" required placeholder="Enter your email">
+                
+                <label for="signup-password">Password:</label>
+                <input type="password" id="signup-password" minlength="8" required placeholder="Create a password (min 8 chars)">
+                <div id="signup-error" class="error hidden"></div>
+                
+                <button type="submit">Sign Up <i class="fas fa-user-plus"></i></button>
+            </form>
+            
+            <p>Already have an account? <a href="#" onclick="showLogin()" class="animate-link">Login</a></p>
+        </section>
+        
+        <!-- Login Section -->
+        <section id="login" class="form-section hidden animate__animated animate__fadeIn">
+            <h2>Welcome Back!</h2>
+            <div class="social-login">
+                <button class="social-btn google-btn" onclick="signInWithGoogle()">
+                    <i class="fab fa-google"></i> Login with Google
+                </button>
+                <button class="social-btn facebook-btn" onclick="signInWithFacebook()">
+                    <i class="fab fa-facebook-f"></i> Login with Facebook
+                </button>
+            </div>
+            
+            <div class="divider"><span>OR</span></div>
+            
+            <form id="login-form">
+                <label for="login-email">Email:</label>
+                <input type="email" id="login-email" required placeholder="Enter your email">
+                
+                <label for="login-password">Password:</label>
+                <input type="password" id="login-password" required placeholder="Enter your password">
+                <div id="login-error" class="error hidden"></div>
+                
+                <button type="submit">Login <i class="fas fa-sign-in-alt"></i></button>
+            </form>
+            
+            <p>Don't have an account? <a href="#" onclick="showSignup()" class="animate-link">Sign up</a></p>
+            <p><a href="#" onclick="showForgotPassword()" class="animate-link">Forgot password?</a></p>
+        </section>
+        
+        <!-- Forgot Password Section -->
+        <section id="forgot-password" class="form-section hidden animate__animated animate__fadeIn">
+            <h2>Reset Password</h2>
+            <form id="forgot-password-form">
+                <label for="reset-email">Email:</label>
+                <input type="email" id="reset-email" required placeholder="Enter your email">
+                <div id="reset-error" class="error hidden"></div>
+                
+                <button type="submit">Send Reset Link <i class="fas fa-paper-plane"></i></button>
+            </form>
+            
+            <p><a href="#" onclick="showLogin()" class="animate-link">Back to Login</a></p>
+        </section>
+        
+        <!-- Profile Section -->
+        <section id="profile" class="form-section hidden animate__animated animate__fadeIn">
+            <h2>User Profile</h2>
+            <div class="profile-info">
+                <div class="profile-avatar animate__animated animate__bounceIn">
+                    <i class="fas fa-user-circle"></i>
+                </div>
+                <p>Welcome, <span id="display-username" class="highlight"></span></p>
+                <p>Email: <span id="display-email" class="highlight"></span></p>
+                <p>Account created: <span id="display-created" class="highlight"></span></p>
+            </div>
+        </section>
+        
+        <!-- Update Profile Section -->
+        <section id="update-profile" class="form-section hidden animate__animated animate__fadeIn">
+            <h2>Update Profile</h2>
+            <form id="update-profile-form">
+                <label for="update-name">Name:</label>
+                <input type="text" id="update-name" required placeholder="Enter your name">
+                
+                <label for="update-email">Email:</label>
+                <input type="email" id="update-email" required placeholder="Enter your email">
+                
+                <button type="submit">Save Changes <i class="fas fa-save"></i></button>
+            </form>
+        </section>
+        
+        <!-- Update Password Section -->
+        <section id="update-password" class="form-section hidden animate__animated animate__fadeIn">
+            <h2>Change Password</h2>
+            <form id="update-password-form">
+                <label for="current-password">Current Password:</label>
+                <input type="password" id="current-password" required placeholder="Enter current password">
+                
+                <label for="new-password">New Password:</label>
+                <input type="password" id="new-password" minlength="8" required placeholder="Enter new password (min 8 chars)">
+                
+                <label for="confirm-password">Confirm New Password:</label>
+                <input type="password" id="confirm-password" minlength="8" required placeholder="Confirm new password">
+                <div id="password-error" class="error hidden"></div>
+                
+                <button type="submit">Update Password <i class="fas fa-key"></i></button>
+            </form>
+        </section>
+        
+        <!-- Recommendations Section -->
+        <section id="recommendations" class="form-section hidden animate__animated animate__fadeIn">
+            <h2>Describe Your Requirements</h2>
+            <form id="recommendations-form">
+                <label for="user-requirements">What software are you looking for?</label>
+                <textarea id="user-requirements" rows="5" placeholder="Example: I need a video editing software for beginners that's free to use and works on Windows..." required></textarea>
+                
+                <button type="submit">Get Recommendations <i class="fas fa-search"></i></button>
+            </form>
+        </section>
+        
+        <!-- Results Section -->
+        <section id="results" class="form-section hidden animate__animated animate__fadeIn">
+            <h2>Recommended Software</h2>
+            <div id="software-response" class="software-list"></div>
+            <button onclick="showRecommendations()" class="secondary-btn">New Search <i class="fas fa-redo"></i></button>
+        </section>
+    </main>
+    
+    <div class="theme-toggle">
+        <button class="toggle-btn" onclick="toggleDarkMode()">
+            <i class="fas fa-moon"></i>
+        </button>
+    </div>
+    
+    <script>
+        // DOM Elements
+        const profileIcon = document.getElementById('profile-icon');
+        const profileMenu = document.getElementById('profile-menu');
+        const sections = {
+            signup: document.getElementById('signup'),
+            login: document.getElementById('login'),
+            forgotPassword: document.getElementById('forgot-password'),
+            profile: document.getElementById('profile'),
+            updateProfile: document.getElementById('update-profile'),
+            updatePassword: document.getElementById('update-password'),
+            recommendations: document.getElementById('recommendations'),
+            results: document.getElementById('results')
+        };
+        
+        // Toggle profile menu
+        profileIcon.addEventListener('click', (e) => {
+            e.stopPropagation();
+            profileMenu.classList.toggle('show');
+        });
+        
+        // Close profile menu when clicking outside
+        document.addEventListener('click', () => {
+            profileMenu.classList.remove('show');
+        });
+        
+        // Show section with animation
+        function showSection(sectionId) {
+            // Hide all sections
+            Object.values(sections).forEach(section => {
+                section.classList.add('hidden');
+            });
+            
+            // Show the requested section
+            const section = document.getElementById(sectionId);
+            section.classList.remove('hidden');
+            section.classList.add('animate__animated', 'animate__fadeIn');
+            
+            // Scroll to top
+            window.scrollTo(0, 0);
+        }
+        
+        // Navigation functions
+        function showSignup() {
+            showSection('signup');
+        }
+        
+        function showLogin() {
+            showSection('login');
+        }
+        
+        function showForgotPassword() {
+            showSection('forgot-password');
+        }
+        
+        function viewProfile() {
+            // In a real app, you would fetch user data here
+            document.getElementById('display-username').textContent = "John Doe";
+            document.getElementById('display-email').textContent = "john.doe@example.com";
+            document.getElementById('display-created').textContent = new Date().toLocaleDateString();
+            showSection('profile');
+            profileMenu.classList.remove('show');
+        }
+        
+        function showUpdateProfile() {
+            // In a real app, you would populate with current user data
+            document.getElementById('update-name').value = "John Doe";
+            document.getElementById('update-email').value = "john.doe@example.com";
+            showSection('update-profile');
+            profileMenu.classList.remove('show');
+        }
+        
+        function showUpdatePassword() {
+            showSection('update-password');
+            profileMenu.classList.remove('show');
+        }
+        
+        function showRecommendations() {
+            showSection('recommendations');
+        }
+        
+        function logoutUser() {
+            // In a real app, you would handle logout logic here
+            profileIcon.classList.add('hidden');
+            showSection('login');
+            profileMenu.classList.remove('show');
+            
+            // Show logout message
+            const loginError = document.getElementById('login-error');
+            loginError.textContent = "You have been successfully logged out.";
+            loginError.classList.remove('error');
+            loginError.classList.add('success');
+            loginError.classList.remove('hidden');
+            
+            // Remove the message after 5 seconds
+            setTimeout(() => {
+                loginError.classList.add('hidden');
+            }, 5000);
+        }
+        
+        // Form submissions
+        document.getElementById('signup-form').addEventListener('submit', function(e) {
+            e.preventDefault();
+            const errorElement = document.getElementById('signup-error');
+            
+            // Simple validation
+            const password = document.getElementById('signup-password').value;
+            if (password.length < 8) {
+                errorElement.textContent = "Password must be at least 8 characters long.";
+                errorElement.classList.remove('hidden');
+                errorElement.classList.add('animate__animated', 'animate__shakeX');
+                return;
+            }
+            
+            // Simulate successful signup
+            errorElement.classList.add('hidden');
+            profileIcon.classList.remove('hidden');
+            showSection('recommendations');
+            
+            // In a real app, you would handle the signup process here
+        });
+        
+        document.getElementById('login-form').addEventListener('submit', function(e) {
+            e.preventDefault();
+            const errorElement = document.getElementById('login-error');
+            
+            // Simulate successful login
+            errorElement.classList.add('hidden');
+            profileIcon.classList.remove('hidden');
+            showSection('recommendations');
+            
+            // In a real app, you would handle the login process here
+        });
+        
+        document.getElementById('forgot-password-form').addEventListener('submit', function(e) {
+            e.preventDefault();
+            const errorElement = document.getElementById('reset-error');
+            
+            // Simulate successful password reset request
+            errorElement.textContent = "Password reset link has been sent to your email.";
+            errorElement.classList.remove('error');
+            errorElement.classList.add('success');
+            errorElement.classList.remove('hidden');
+            
+            // In a real app, you would handle the password reset process here
+        });
+        
+        document.getElementById('update-profile-form').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            // Simulate profile update
+            document.getElementById('display-username').textContent = document.getElementById('update-name').value;
+            document.getElementById('display-email').textContent = document.getElementById('update-email').value;
+            showSection('profile');
+            
+            // In a real app, you would handle the profile update process here
+        });
+        
+        document.getElementById('update-password-form').addEventListener('submit', function(e) {
+            e.preventDefault();
+            const errorElement = document.getElementById('password-error');
+            const newPassword = document.getElementById('new-password').value;
+            const confirmPassword = document.getElementById('confirm-password').value;
+            
+            if (newPassword !== confirmPassword) {
+                errorElement.textContent = "Passwords do not match.";
+                errorElement.classList.remove('hidden');
+                errorElement.classList.add('animate__animated', 'animate__shakeX');
+                return;
+            }
+            
+            if (newPassword.length < 8) {
+                errorElement.textContent = "Password must be at least 8 characters long.";
+                errorElement.classList.remove('hidden');
+                errorElement.classList.add('animate__animated', 'animate__shakeX');
+                return;
+            }
+            
+            // Simulate successful password change
+            errorElement.textContent = "Password changed successfully!";
+            errorElement.classList.remove('error');
+            errorElement.classList.add('success');
+            errorElement.classList.remove('hidden');
+            
+            // Clear form
+            this.reset();
+            
+            // In a real app, you would handle the password change process here
+        });
+        
+        document.getElementById('recommendations-form').addEventListener('submit', async function(e) {
+    e.preventDefault();
+    const requirements = document.getElementById('user-requirements').value;
+    const responseElement = document.getElementById('software-response');
+    
+    // Show loading state
+    responseElement.innerHTML = '<p class="loading-text">Finding the best software for you</p>';
+    showSection('results');
+    
+    try {
+        // Make API call to your Flask backend
+        const response = await fetch('http://localhost:5000/get_recommendations', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+            },
+            body: JSON.stringify({ prompt: requirements })
+        });
+        
+        if (!response.ok) {
+            throw new Error('Network response was not ok');
+        }
+        
+        const data = await response.json();
+        
+        if (data.status === 'error') {
+            throw new Error(data.error);
+        }
+        
+        // Display the recommendations from the API
+        responseElement.innerHTML = formatRecommendations(data.recommendations);
+        
+    } catch (error) {
+        responseElement.innerHTML = `
+            <div class="error">
+                <i class="fas fa-exclamation-triangle"></i>
+                <p>Error getting recommendations: ${error.message}</p>
+            </div>
+            <button onclick="showRecommendations()" class="secondary-btn">Try Again <i class="fas fa-redo"></i></button>
+        `;
+    }
+});
+
+// Helper function to format the API response (you might need to adjust this based on the actual response format)
+function formatRecommendations(text) {
+    // This is a basic formatter - you might need to adjust based on how Gemini formats its response
+    let html = text.replace(/\*\*(.*?)\*\*/g, '<strong>$1</strong>'); // Convert markdown bold to HTML
+    html = html.replace(/\n/g, '<br>'); // Convert newlines to line breaks
+    
+    // You might want to add more sophisticated parsing here based on how the API formats its response
+    return `<div class="api-response">${html}</div>
+            <button onclick="showRecommendations()" class="secondary-btn">New Search <i class="fas fa-redo"></i></button>`;
+};
+        
+        // Dark mode toggle
+        function toggleDarkMode() {
+            document.body.classList.toggle('dark-mode');
+            const toggleBtn = document.querySelector('.toggle-btn');
+            
+            if (document.body.classList.contains('dark-mode')) {
+                toggleBtn.innerHTML = '<i class="fas fa-sun"></i>';
+                localStorage.setItem('darkMode', 'enabled');
+            } else {
+                toggleBtn.innerHTML = '<i class="fas fa-moon"></i>';
+                localStorage.setItem('darkMode', 'disabled');
+            }
+        }
+        
+        // Check for saved dark mode preference
+        if (localStorage.getItem('darkMode') === 'enabled') {
+            document.body.classList.add('dark-mode');
+            document.querySelector('.toggle-btn').innerHTML = '<i class="fas fa-sun"></i>';
+        }
+        
+        // Initialize
+        document.addEventListener('DOMContentLoaded', () => {
+            // In a real app, you would check if user is logged in
+            const isLoggedIn = false;
+            
+            if (isLoggedIn) {
+                profileIcon.classList.remove('hidden');
+                showSection('recommendations');
+            } else {
+                showSection('signup');
+            }
+        });
+        
+        // Social login functions (placeholder)
+        function signInWithGoogle() {
+            alert("In a real app, this would connect to Google authentication");
+        }
+        
+        function signInWithFacebook() {
+            alert("In a real app, this would connect to Facebook authentication");
+        }
+    </script>
+</body>
+</html>
