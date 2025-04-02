@@ -1,0 +1,377 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Our Services - Software Recommendation Chatbot</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        :root {
+            --primary: #6c5ce7;
+            --primary-light: #a29bfe;
+            --secondary: #fd79a8;
+            --accent: #00cec9;
+            --dark: #2d3436;
+            --light: #f5f6fa;
+            --success: #00b894;
+            --warning: #fdcb6e;
+            --danger: #d63031;
+            --gray: #636e72;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        body {
+            background: linear-gradient(135deg, #f5f7fa 0%, #dfe6e9 100%);
+            min-height: 100vh;
+            color: var(--dark);
+            line-height: 1.6;
+        }
+
+        header {
+            background: linear-gradient(to right, var(--primary), var(--secondary));
+            color: white;
+            padding: 2rem;
+            text-align: center;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+        }
+
+        h1 {
+            font-size: 2.5rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .subtitle {
+            font-size: 1.2rem;
+            opacity: 0.9;
+        }
+
+        .container {
+            max-width: 1000px;
+            margin: 2rem auto;
+            padding: 0 2rem;
+        }
+
+        .services-section {
+            background: white;
+            border-radius: 16px;
+            padding: 2rem;
+            margin-bottom: 2rem;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+        }
+
+        h2 {
+            color: var(--primary);
+            margin-bottom: 1.5rem;
+            font-size: 1.8rem;
+            position: relative;
+            padding-bottom: 0.5rem;
+        }
+
+        h2::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 60px;
+            height: 4px;
+            background: var(--accent);
+            border-radius: 2px;
+        }
+
+        p {
+            margin-bottom: 1.2rem;
+            font-size: 1.05rem;
+            line-height: 1.7;
+        }
+
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 1.5rem;
+            margin: 2rem 0;
+        }
+
+        .service-card {
+            background: white;
+            border-radius: 12px;
+            padding: 1.5rem;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+            transition: all 0.3s ease;
+            border: 1px solid rgba(0, 0, 0, 0.05);
+        }
+
+        .service-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 25px rgba(108, 92, 231, 0.1);
+        }
+
+        .service-icon {
+            font-size: 2.5rem;
+            color: var(--primary);
+            margin-bottom: 1rem;
+        }
+
+        .service-title {
+            font-size: 1.3rem;
+            color: var(--dark);
+            margin-bottom: 0.8rem;
+        }
+
+        .service-features {
+            margin: 1rem 0;
+            padding-left: 1.2rem;
+        }
+
+        .service-features li {
+            margin-bottom: 0.5rem;
+            position: relative;
+        }
+
+        .service-features li::before {
+            content: '•';
+            color: var(--primary);
+            font-weight: bold;
+            display: inline-block;
+            width: 1em;
+            margin-left: -1em;
+        }
+
+        .testimonials {
+            margin: 3rem 0;
+        }
+
+        .testimonial-card {
+            background: white;
+            border-radius: 12px;
+            padding: 1.5rem;
+            margin: 1rem 0;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+            border-left: 4px solid var(--primary);
+        }
+
+        .testimonial-text {
+            font-style: italic;
+            margin-bottom: 1rem;
+        }
+
+        .testimonial-author {
+            font-weight: 600;
+            color: var(--primary);
+        }
+
+        .cta {
+            text-align: center;
+            margin: 3rem 0;
+        }
+
+        .btn {
+            display: inline-block;
+            background: linear-gradient(to right, var(--primary), var(--secondary));
+            color: white;
+            padding: 0.8rem 2rem;
+            border-radius: 30px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(108, 92, 231, 0.3);
+        }
+
+        .btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 20px rgba(108, 92, 231, 0.4);
+        }
+
+        footer {
+            text-align: center;
+            padding: 2rem;
+            background: var(--dark);
+            color: white;
+            margin-top: 3rem;
+        }
+
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 2rem;
+            }
+            
+            .container {
+                padding: 0 1rem;
+            }
+            
+            .services-section {
+                padding: 1.5rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Our Services</h1>
+        <p class="subtitle">Discover how our chatbot can help you find the perfect software</p>
+    </header>
+
+    <div class="container">
+        <section class="services-section">
+            <h2>What We Offer</h2>
+            <p>Our software recommendation chatbot provides intelligent, personalized suggestions to help you find the best tools for your specific needs. Here are the key services we offer:</p>
+            
+            <div class="services-grid">
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-robot"></i>
+                    </div>
+                    <h3 class="service-title">Personalized Recommendations</h3>
+                    <p>Get tailored software suggestions based on your specific requirements, budget, and skill level.</p>
+                    <ul class="service-features">
+                        <li>Understands natural language queries</li>
+                        <li>Considers your technical proficiency</li>
+                        <li>Matches your budget constraints</li>
+                        <li>Adapts to your preferred platforms</li>
+                    </ul>
+                </div>
+
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-balance-scale"></i>
+                    </div>
+                    <h3 class="service-title">Software Comparisons</h3>
+                    <p>Detailed side-by-side comparisons of similar software products to help you make informed decisions.</p>
+                    <ul class="service-features">
+                        <li>Feature-by-feature analysis</li>
+                        <li>Pricing breakdowns</li>
+                        <li>User review summaries</li>
+                        <li>Performance benchmarks</li>
+                    </ul>
+                </div>
+
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-chart-line"></i>
+                    </div>
+                    <h3 class="service-title">Trend Analysis</h3>
+                    <p>Stay updated with the latest software trends and emerging technologies in your field.</p>
+                    <ul class="service-features">
+                        <li>Industry trend reports</li>
+                        <li>Emerging technology alerts</li>
+                        <li>Market share statistics</li>
+                        <li>Adoption rate insights</li>
+                    </ul>
+                </div>
+
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-graduation-cap"></i>
+                    </div>
+                    <h3 class="service-title">Learning Resources</h3>
+                    <p>Access curated tutorials and learning materials for recommended software.</p>
+                    <ul class="service-features">
+                        <li>Beginner guides</li>
+                        <li>Video tutorials</li>
+                        <li>Official documentation links</li>
+                        <li>Community forum access</li>
+                    </ul>
+                </div>
+
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-bell"></i>
+                    </div>
+                    <h3 class="service-title">Update Notifications</h3>
+                    <p>Receive alerts about important updates for your chosen software.</p>
+                    <ul class="service-features">
+                        <li>Version update alerts</li>
+                        <li>Security patch notifications</li>
+                        <li>Feature release announcements</li>
+                        <li>End-of-life warnings</li>
+                    </ul>
+                </div>
+
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-users"></i>
+                    </div>
+                    <h3 class="service-title">Community Recommendations</h3>
+                    <p>See what software solutions professionals in your field are using.</p>
+                    <ul class="service-features">
+                        <li>Peer recommendations</li>
+                        <li>Industry-specific suggestions</li>
+                        <li>Team collaboration tools</li>
+                        <li>Enterprise solutions</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <section class="services-section">
+            <h2>How It Works</h2>
+            <div class="services-grid">
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-comment-alt"></i>
+                    </div>
+                    <h3 class="service-title">1. Describe Your Needs</h3>
+                    <p>Tell our chatbot what kind of software you're looking for in simple, natural language.</p>
+                </div>
+
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-question-circle"></i>
+                    </div>
+                    <h3 class="service-title">2. Answer Follow-ups</h3>
+                    <p>The chatbot may ask clarifying questions to better understand your requirements.</p>
+                </div>
+
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-list-ul"></i>
+                    </div>
+                    <h3 class="service-title">3. Receive Recommendations</h3>
+                    <p>Get a curated list of software options that match your criteria.</p>
+                </div>
+
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-sliders-h"></i>
+                    </div>
+                    <h3 class="service-title">4. Refine Results</h3>
+                    <p>Narrow down your options by specifying preferences like price range or features.</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="services-section testimonials">
+            <h2>What Our Users Say</h2>
+            <div class="testimonial-card">
+                <p class="testimonial-text">"This chatbot saved me hours of research! It perfectly understood my needs as a graphic designer and recommended three tools I'd never heard of that were exactly what I needed."</p>
+                <p class="testimonial-author">- Priya M., Graphic Designer</p>
+            </div>
+            
+            <div class="testimonial-card">
+                <p class="testimonial-text">"As a startup founder with limited budget, finding the right tools is crucial. The chatbot's budget-sensitive recommendations helped us build our tech stack without breaking the bank."</p>
+                <p class="testimonial-author">- Rajesh K., Startup Founder</p>
+            </div>
+            
+            <div class="testimonial-card">
+                <p class="testimonial-text">"I'm not very tech-savvy, but the chatbot explained everything in simple terms and even provided beginner tutorials for the software it recommended. Game changer!"</p>
+                <p class="testimonial-author">- Meena S., Small Business Owner</p>
+            </div>
+        </section>
+
+        <div class="cta">
+            <a href="#" class="btn">Try Our Chatbot Now</a>
+        </div>
+    </div>
+
+    <footer>
+        <p>&copy; 2023 Software Recommendation Chatbot. All rights reserved.</p>
+        <p style="margin-top: 0.5rem; opacity: 0.8;">Helping you find the perfect tools since 2023</p>
+    </footer>
+</body>
+</html>
