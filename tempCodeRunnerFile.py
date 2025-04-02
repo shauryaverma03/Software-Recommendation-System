@@ -28,7 +28,7 @@ def get_recommendations():
             "status": "success"
         })
     except Exception as e:
-        return jsonify({
+        return jsonify({ 
             "error": str(e),
             "status": "error"
         }), 500
