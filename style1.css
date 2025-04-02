@@ -1,0 +1,397 @@
+html, body {
+    height: 100%;
+}
+body {
+    margin: 0;
+    /* overflow: hidden; */
+    background: rgba(0,0,0, 1);
+    /* disables highlighting on mobile */
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    user-select: none;
+    -webkit-touch-callout: none;
+}
+canvas {
+    outline: none;
+    display: block;
+}
+
+
+
+.spline-watermark {
+    position: absolute;
+    z-index: 2;
+    bottom: 20px;
+    right: 20px;
+    width: 137px;
+    height: 36px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    gap: 6px;
+    border-radius: 12px;
+    background: linear-gradient(180deg, #16181C 0%, #121316 100%);
+    box-shadow: inset 0px -2px 0px -1px #060709, inset 0px 1px 0px rgba(255, 255, 255, 0.04);
+}
+.spline-watermark span {
+    display: block;
+    width: 20px;
+    height: 20px;
+    background-image: url(https://app.spline.design/_assets/_icons/icon_favicon32x32.png);
+    background-size: cover;
+}
+.spline-watermark svg {
+    display: block;
+    margin-right: 2px;
+}
+.spline-watermark:hover {
+    background: linear-gradient(180deg, #1B1C21 0%, #17181C 100%);
+}
+nav {
+position: static;
+top: 0;
+width: 100%;
+background: rgba(0, 0, 0, 0.8);
+padding: 15px 0;
+text-align: center;
+}
+
+nav a {
+color: white;
+text-decoration: none;
+margin: 0 15px;
+font-size: 18px;
+font-weight: bold;
+}
+
+nav a:hover {
+color: cyan;
+}
+
+canvas {
+display: block;
+}
+.left-content {
+position: absolute;
+top: 50%;
+left: 20px;
+transform: translateY(-50%);
+color: white;
+font-size: 22px; /* Increased text size */
+font-weight: bold;
+max-width: 350px;
+background: rgba(0, 0, 0, 0.7);
+padding: 20px;
+border-radius: 10px;
+text-align: left;
+line-height: 1.6;
+}
+.left-content {
+float: left;
+width: 50%;
+padding: 20px;
+}
+
+#canvas3d {
+float: right;
+width: 50%;
+height: auto;
+display: block;
+}
+
+#canvas3d {
+float: right;
+width: 50%;
+height: auto;
+display: block;
+}
+
+nav {
+display: flex;
+justify-content: space-between; /* Space between left and right sections */
+align-items: center;
+background-color: transparent; /* Matches the webpage background */
+}
+
+.nav-left {
+font-size: 24px; /* Increased font size for the AI name */
+font-weight: bold;
+}
+
+.nav-left a {
+text-decoration: none;
+color: white;
+font-size: 24px; /* Explicitly set font size for the link */
+}
+
+
+.nav-right {
+font-size: 24px; /* Increased font size for navigation links */
+display: flex;
+flex-wrap: wrap; /* Allows links to wrap if needed */
+}
+
+.nav-right a {
+margin-left: 15px; /* Adds spacing between links */
+text-decoration: none;
+color: white;
+font-size: 20px; /* Explicitly set font size for navigation links */
+}
+
+.nav-right a:hover {
+color: #007BFF; /* Hover color for navigation links */
+}
+.left-content {
+perspective: 1000px; /* Adds perspective for 3D effect */
+margin: 20px;
+}
+
+.left-content h2 {
+font-size: 2.5rem;
+color: white;
+padding: 10px; /* Adds padding for better readability */
+border-radius: 5px; /* Rounds the corners */
+transform: rotateY(-15deg) translateZ(50px); /* 3D rotation and translation */
+text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5); /* Adds depth */
+background-color: transparent; /* Fully transparent background */
+}
+
+.left-content p {
+font-size: 1.2rem;
+color: white;
+padding: 10px; /* Adds padding for better readability */
+border-radius: 5px; /* Rounds the corners */
+transform: rotateY(-10deg) translateZ(30px); /* 3D rotation and translation */
+text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5); /* Adds depth */
+background-color: transparent; /* Fully transparent background */
+}
+.get-started-btn {
+padding: 15px 30px; /* Increases button size */
+font-size: 18px; /* Makes the text larger */
+color: black; /* Changes text color to black */
+background-color: white; /* Changes background color to white */
+border: none;
+border-radius: 8px; /* Rounds the corners more */
+cursor: pointer;
+text-transform: uppercase;
+box-shadow: 3px 3px 8px rgba(0, 0, 0, 0.3);
+transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.get-started-btn:hover {
+background-color: #f0f0f0; /* Slightly darker white on hover */
+transform: scale(1.1); /* Slightly enlarges the button on hover */
+}
+
+/* Navigation Bar Animation */
+.nav-left a {
+text-decoration: none;
+color: white;
+font-size: 24px; /* Explicitly set font size for the link */
+animation: fadeInLeft 1.5s ease-in-out; /* Animation for the left section */
+}
+
+.nav-right a {
+margin-left: 15px; /* Adds spacing between links */
+text-decoration: none;
+color: white;
+font-size: 20px; /* Explicitly set font size for navigation links */
+animation: fadeInRight 1.5s ease-in-out; /* Animation for the right section */
+}
+
+.nav-right a:hover {
+color: #007BFF; /* Hover color for navigation links */
+}
+
+/* Heading Animation */
+.left-content h2 {
+font-size: 2.5rem;
+color: white;
+padding: 10px; /* Adds padding for better readability */
+animation: slideInDown 1.5s ease-in-out; /* Animation for the heading */
+}
+
+/* Keyframes for Animations */
+@keyframes fadeInLeft {
+from {
+opacity: 0;
+transform: translateX(-50px);
+}
+to {
+opacity: 1;
+transform: translateX(0);
+}
+}
+
+@keyframes fadeInRight {
+from {
+opacity: 0;
+transform: translateX(50px);
+}
+to {
+opacity: 1;
+transform: translateX(0);
+}
+}
+
+@keyframes slideInDown {
+from {
+opacity: 0;
+transform: translateY(-50px);
+}
+to {
+opacity: 1;
+transform: translateY(0);
+}
+body {
+overflow-y: auto; /* Enables vertical scrolling */
+}
+
+html, body {
+height: 100%;
+}
+main {
+flex-grow: 1;
+}
+
+}
+#about-chatbot {
+display: flex;
+align-items: center;
+justify-content: space-between;
+padding: 50px;
+background-color: #f9f9f9; /* Light background color */
+}
+
+.about-container {
+display: flex;
+align-items: center;
+justify-content: space-between;
+width: 100%;
+max-width: 1200px;
+margin: 0 auto;
+}
+.about-text {
+flex: 1;
+padding-right: 20px;
+}
+
+.about-text h2 {
+font-size: 2.5rem;
+margin-bottom: 20px;
+color: #333;
+}
+
+.about-text p {
+font-size: 1.2rem;
+line-height: 1.6;
+color: #555;
+}
+
+.about-image {
+flex: 1;
+text-align: center;
+}
+
+.about-image img {
+width: 100%;
+max-height: 800px;
+max-width: 900px;
+border-radius: 25px; /* Curved edges */
+box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+}
+#new-section {
+display: flex;
+align-items: center;
+justify-content: space-between;
+padding: 50px;
+background-color: #f4f4f4; /* Light gray background */
+}
+
+.new-section-container {
+display: flex;
+align-items: center;
+justify-content: space-between;
+width: 100%;
+max-width: 1200px;
+margin: 0 auto;
+}
+
+.new-section-image {
+flex: 1;
+text-align: center;
+}
+
+.new-section-image img {
+width: 100%;
+max-width: 900px;
+border-radius: 25px; /* Curved edges */
+box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+}
+
+.new-section-text {
+flex: 1;
+padding-left: 20px;
+}
+
+.new-section-text h2 {
+font-size: 2.5rem;
+margin-bottom: 20px;
+color: #333;
+}
+
+.new-section-text p {
+font-size: 1.2rem;
+line-height: 1.6;
+color: #555;
+}
+#about-chatbot {
+animation: fadeInUp 1.5s ease-in-out; /* Fades in and slides up */
+}
+
+/* Animation for New Section */
+#new-section {
+animation: fadeInLeft 1.5s ease-in-out; /* Fades in and slides in from the left */
+}
+
+/* Keyframes for Animations */
+@keyframes fadeInUp {
+from {
+opacity: 0;
+transform: translateY(50px); /* Starts slightly below */
+}
+to {
+opacity: 1;
+transform: translateY(0); /* Ends in its original position */
+}
+}
+
+@keyframes fadeInLeft {
+from {
+opacity: 0;
+transform: translateX(-50px); /* Starts slightly to the left */
+}
+to {
+opacity: 1;
+transform: translateX(0); /* Ends in its original position */
+}
+}
+#loading-screen {
+position: fixed;
+top: 0;
+left: 0;
+width: 100%;
+height: 100%;
+background-color: #ffffff; /* White background */
+display: flex;
+justify-content: center;
+align-items: center;
+z-index: 9999; /* Ensure it stays on top */
+font-size: 1.5rem;
+color: #333;
+}
+
+body.loading #main-content {
+display: none; /* Hide the main content while loading */
+}
