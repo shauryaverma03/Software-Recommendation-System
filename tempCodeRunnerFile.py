@@ -1,0 +1,1 @@
+CORS(app, resources={r"/*": {"origins": "https://sachin23991.github.io"}})

@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About - Software Recommendation Chatbot</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        :root {
+            --primary: #6c5ce7;
+            --primary-light: #a29bfe;
+            --secondary: #fd79a8;
+            --accent: #00cec9;
+            --dark: #2d3436;
+            --light: #f5f6fa;
+            --success: #00b894;
+            --warning: #fdcb6e;
+            --danger: #d63031;
+            --gray: #636e72;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        body {
+            background: linear-gradient(135deg, #f5f7fa 0%, #dfe6e9 100%);
+            min-height: 100vh;
+            color: var(--dark);
+            line-height: 1.6;
+        }
+
+        header {
+            background: linear-gradient(to right, var(--primary), var(--secondary));
+            color: white;
+            padding: 2rem;
+            text-align: center;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+        }
+
+        h1 {
+            font-size: 2.5rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .subtitle {
+            font-size: 1.2rem;
+            opacity: 0.9;
+        }
+
+        .container {
+            max-width: 1000px;
+            margin: 2rem auto;
+            padding: 0 2rem;
+        }
+
+        .about-section {
+            background: white;
+            border-radius: 16px;
+            padding: 2rem;
+            margin-bottom: 2rem;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+        }
+
+        h2 {
+            color: var(--primary);
+            margin-bottom: 1.5rem;
+            font-size: 1.8rem;
+            position: relative;
+            padding-bottom: 0.5rem;
+        }
+
+        h2::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 60px;
+            height: 4px;
+            background: var(--accent);
+            border-radius: 2px;
+        }
+
+        p {
+            margin-bottom: 1.2rem;
+            font-size: 1.05rem;
+            line-height: 1.7;
+        }
+
+        .features {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 1.5rem;
+            margin: 2rem 0;
+        }
+
+        .feature-card {
+            background: white;
+            border-radius: 12px;
+            padding: 1.5rem;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+            transition: transform 0.3s ease;
+        }
+
+        .feature-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .feature-icon {
+            font-size: 2rem;
+            color: var(--primary);
+            margin-bottom: 1rem;
+        }
+
+        .feature-title {
+            font-size: 1.3rem;
+            color: var(--dark);
+            margin-bottom: 0.8rem;
+        }
+
+        .tech-stack {
+            margin: 2rem 0;
+        }
+
+        .tech-item {
+            display: inline-block;
+            background: rgba(108, 92, 231, 0.1);
+            color: var(--primary);
+            padding: 0.5rem 1rem;
+            border-radius: 20px;
+            margin: 0.5rem 0.5rem 0.5rem 0;
+            font-weight: 500;
+        }
+
+        .cta {
+            text-align: center;
+            margin: 3rem 0;
+        }
+
+        .btn {
+            display: inline-block;
+            background: linear-gradient(to right, var(--primary), var(--secondary));
+            color: white;
+            padding: 0.8rem 2rem;
+            border-radius: 30px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(108, 92, 231, 0.3);
+        }
+
+        .btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 20px rgba(108, 92, 231, 0.4);
+        }
+
+        footer {
+            text-align: center;
+            padding: 2rem;
+            background: var(--dark);
+            color: white;
+            margin-top: 3rem;
+        }
+
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 2rem;
+            }
+            
+            .container {
+                padding: 0 1rem;
+            }
+            
+            .about-section {
+                padding: 1.5rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>TechBot</h1>
+        <p class="subtitle">Your Intelligent Software Recommendation Assistant</p>
+    </header>
+
+    <div class="container">
+        <section class="about-section">
+            <h2>About TechBot</h2>
+            <p>TechBot is an advanced AI-powered chatbot designed to help users find the perfect software solutions for their specific needs. Whether you're a developer looking for the right IDE, a designer searching for creative tools, or a business professional needing productivity software, TechBot provides personalized recommendations based on your requirements.</p>
+            
+            <p>Our chatbot uses natural language processing to understand your needs and machine learning algorithms to match you with the most suitable software options from our extensive database. TechBot continuously learns from user interactions to improve its recommendations over time.</p>
+        </section>
+
+        <section class="about-section">
+            <h2>Key Features</h2>
+            <div class="features">
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-comments"></i>
+                    </div>
+                    <h3 class="feature-title">Natural Conversations</h3>
+                    <p>Chat with TechBot just like you would with a human expert. Ask questions in plain English and get clear, helpful responses.</p>
+                </div>
+
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-lightbulb"></i>
+                    </div>
+                    <h3 class="feature-title">Smart Recommendations</h3>
+                    <p>Get personalized software suggestions based on your specific needs, budget, platform, and skill level.</p>
+                </div>
+
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-sync-alt"></i>
+                    </div>
+                    <h3 class="feature-title">Continuous Learning</h3>
+                    <p>TechBot improves its recommendations over time by learning from thousands of user interactions and software reviews.</p>
+                </div>
+
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-balance-scale"></i>
+                    </div>
+                    <h3 class="feature-title">Comparison Tools</h3>
+                    <p>Compare multiple software options side-by-side to see their features, pricing, and user ratings at a glance.</p>
+                </div>
+
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-history"></i>
+                    </div>
+                    <h3 class="feature-title">Search History</h3>
+                    <p>Save your previous searches and recommendations for easy reference whenever you need them.</p>
+                </div>
+
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-mobile-alt"></i>
+                    </div>
+                    <h3 class="feature-title">Multi-Platform Access</h3>
+                    <p>Access TechBot through our web interface, mobile app, or popular messaging platforms like Slack and Discord.</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="about-section">
+            <h2>How It Works</h2>
+            <ol style="padding-left: 1.5rem; margin-bottom: 1.5rem;">
+                <li style="margin-bottom: 1rem;"><strong>Start a conversation:</strong> Tell TechBot what kind of software you're looking for</li>
+                <li style="margin-bottom: 1rem;"><strong>Answer questions:</strong> Help TechBot understand your specific needs by answering follow-up questions</li>
+                <li style="margin-bottom: 1rem;"><strong>Get recommendations:</strong> Receive a curated list of software options that match your criteria</li>
+                <li style="margin-bottom: 1rem;"><strong>Refine results:</strong> Narrow down your options by specifying preferences like price range or features</li>
+                <li><strong>Make your choice:</strong> Select the software that best fits your needs with confidence</li>
+            </ol>
+        </section>
+
+        <section class="about-section">
+            <h2>Technology Stack</h2>
+            <p>TechBot is built using cutting-edge technologies to deliver the best possible user experience:</p>
+            
+            <div class="tech-stack">
+                <span class="tech-item">Natural Language Processing</span>
+                <span class="tech-item">Machine Learning</span>
+                <span class="tech-item">Python</span>
+                <span class="tech-item">TensorFlow</span>
+                <span class="tech-item">Node.js</span>
+                <span class="tech-item">React</span>
+                <span class="tech-item">MongoDB</span>
+                <span class="tech-item">AWS</span>
+            </div>
+        </section>
+
+        <div class="cta">
+            <a href="#" class="btn">Try TechBot Now</a>
+        </div>
+    </div>
+
+    <footer>
+        <p>&copy; 2023 TechBot - Software Recommendation Chatbot. All rights reserved.</p>
+        <p style="margin-top: 0.5rem; opacity: 0.8;">Contact: Sachinandgroup@techbot.ai | Privacy Policy | Terms of Service</p>
+    </footer>
+</body>
+</html>
