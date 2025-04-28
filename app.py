@@ -13,8 +13,8 @@ if not API_KEY:
 genai.configure(api_key=API_KEY)
 model = genai.GenerativeModel('gemini-1.5-pro-latest')
 
-@app.route('/get_recommendations', methods=['POST'])
-def get_recommendations():
+@app.route('/answer_prompt', methods=['POST'])
+def answer_prompt():
     data = request.json
     prompt = data.get("prompt", "")
     
@@ -22,9 +22,9 @@ def get_recommendations():
         return jsonify({"error": "No prompt provided"}), 400
     
     try:
-        response = model.generate_content(f"Provide detailed software recommendations for: {prompt}. Include name, description, key features, pricing (if applicable), and official website links.")
+        response = model.generate_content(prompt)
         return jsonify({
-            "recommendations": response.text,
+            "response": response.text,
             "status": "success"
         })
     except Exception as e:
