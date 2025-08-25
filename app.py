@@ -6,12 +6,16 @@ import os
 app = Flask(__name__)
 CORS(app)  # Enable CORS for all routes
 
-API_KEY = "AIzaSyAqJXj39JAabzqLXsPykvwe6q6u4KYWPb4"
+API_KEY = "AIzaSyB000JJvPeDCcIMUTEe2wvwo7CSv49X1g4"
 if not API_KEY:
     raise ValueError("API key not found! Set GOOGLE_API_KEY as an environment variable.")
 
 genai.configure(api_key=API_KEY)
 model = genai.GenerativeModel('gemini-1.5-pro-latest')
+
+@app.route('/')
+def home():
+    return "API is running!"
 
 @app.route('/answer_prompt', methods=['POST'])
 def answer_prompt():
