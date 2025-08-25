@@ -1,12 +1,11 @@
 from flask import Flask, request, jsonify
 from flask_cors import CORS
 import google.generativeai as genai
-import os
 
 app = Flask(__name__)
 CORS(app)  # Enable CORS for all routes
 
-API_KEY = "AIzaSyB000JJvPeDCcIMUTEe2wvwo7CSv49X1g4"
+API_KEY = "AIzaSyAqJXj39JAabzqLXsPykvwe6q6u4KYWPb4"
 if not API_KEY:
     raise ValueError("API key not found! Set GOOGLE_API_KEY as an environment variable.")
 
