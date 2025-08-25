@@ -3,7 +3,7 @@
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>eSports Team Manager Software Recommendation System</title>
+        <title>Healthcare Recommendation Chatbot</title>
         <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
@@ -14,7 +14,7 @@
 <body>
     <header>
         <div class="header-top">
-            <h1 class="animate__animated animate__fadeInDown">eSports Team Manager Software Recommendation System</h1>
+            <h1 class="animate__animated animate__fadeInDown">Healthcare Recommendation Chatbot</h1>
             <div id="profile-icon" class="animate__animated animate__fadeIn">
                 <i class="fas fa-user"></i>
             </div>
@@ -169,87 +169,87 @@
         <!-- Recommendations Section -->
         <section id="recommendations" class="form-section hidden animate__animated animate__fadeIn">
             <div class="trending-section">
-                <h2 class="trending-title">🔥 Top Trending Software This Week</h2>
+                <h2 class="trending-title">🌟 Top Trending Health Topics This Week</h2>
                 <div class="trending-grid">
                     <div class="trending-card">
                         <div class="trending-icon">
-                            <img src="https://cdn-icons-png.flaticon.com/512/5968/5968292.png" alt="VS Code">
+                            <img src="https://cdn-icons-png.flaticon.com/512/3774/3774299.png" alt="Diabetes">
                         </div>
-                        <h3>VS Code</h3>
+                        <h3>Diabetes Management</h3>
                         <ul class="trending-points">
-                            <li>Lightweight but powerful source code editor</li>
-                            <li>Built-in Git commands and extensions marketplace</li>
-                            <li>Free and open-source with regular updates</li>
+                            <li>Advice on healthy eating and glucose monitoring</li>
+                            <li>Exercise and medication tips</li>
+                            <li>Resources for patients and caregivers</li>
                         </ul>
                     </div>
                     
                     <div class="trending-card">
                         <div class="trending-icon">
-                            <img src="https://cdn-icons-png.flaticon.com/512/5968/5968520.png" alt="Figma">
+                            <img src="https://cdn-icons-png.flaticon.com/512/3062/3062634.png" alt="Mental Health">
                         </div>
-                        <h3>Figma</h3>
+                        <h3>Mental Wellness</h3>
                         <ul class="trending-points">
-                            <li>Collaborative interface design tool</li>
-                            <li>Real-time collaboration with team members</li>
-                            <li>Free for individual use with paid team plans</li>
+                            <li>Tips for stress management and mindfulness</li>
+                            <li>Finding therapists and community support</li>
+                            <li>Self-care and relaxation techniques</li>
                         </ul>
                     </div>
                     
                     <div class="trending-card">
                         <div class="trending-icon">
-                            <img src="https://cdn-icons-png.flaticon.com/512/5968/5968819.png" alt="Blender">
+                            <img src="https://cdn-icons-png.flaticon.com/512/3774/3774299.png" alt="Heart Health">
                         </div>
-                        <h3>Blender</h3>
+                        <h3>Heart Health</h3>
                         <ul class="trending-points">
-                            <li>Free 3D creation suite for modeling and animation</li>
-                            <li>Supports the entire 3D pipeline</li>
-                            <li>Active community and regular updates</li>
+                            <li>Diet and lifestyle changes</li>
+                            <li>Recognizing warning signs</li>
+                            <li>Prevention and regular checkups</li>
                         </ul>
                     </div>
                     
                     <div class="trending-card">
                         <div class="trending-icon">
-                            <img src="https://cdn-icons-png.flaticon.com/512/732/732220.png" alt="Excel">
+                            <img src="https://cdn-icons-png.flaticon.com/512/3774/3774299.png" alt="Women's Health">
                         </div>
-                        <h3>Excel</h3>
+                        <h3>Women's Health</h3>
                         <ul class="trending-points">
-                            <li>Industry standard for spreadsheets</li>
-                            <li>Powerful data analysis and visualization</li>
-                            <li>Part of Microsoft 365 subscription</li>
+                            <li>Reproductive health advice</li>
+                            <li>Preventative screenings</li>
+                            <li>Support for all ages</li>
                         </ul>
                     </div>
                 </div>
                 
                 <div class="trending-cta">
-                    <p>Not sure what you need? Describe your requirements below and we'll find the perfect software for you!</p>
+                    <p>Not sure what you need? Describe your health concern below and we'll provide guidance or resources!</p>
                 </div>
             </div>
             
             <form id="recommendations-form" class="interactive-form">
                 <div class="form-header">
-                    <h2>What software are you looking for?</h2>
+                    <h2>What health advice or resource are you looking for?</h2>
                     <div class="example-trigger" onclick="showExamples()">
                         <i class="fas fa-lightbulb"></i> Need inspiration?
                     </div>
                 </div>
                 
                 <div id="examples-dropdown" class="hidden">
-                    <div class="example-item" onclick="insertExample('Video editing software for beginners that works on Windows')">
-                        <i class="fas fa-video"></i> Video editing for beginners
+                    <div class="example-item" onclick="insertExample('Tips for managing diabetes and keeping blood sugar stable')">
+                        <i class="fas fa-syringe"></i> Diabetes management
                     </div>
-                    <div class="example-item" onclick="insertExample('Free alternative to Photoshop for photo editing')">
-                        <i class="fas fa-camera"></i> Photoshop alternative
+                    <div class="example-item" onclick="insertExample('How to deal with anxiety and stress in daily life')">
+                        <i class="fas fa-brain"></i> Mental wellness
                     </div>
-                    <div class="example-item" onclick="insertExample('Project management tool for remote teams')">
-                        <i class="fas fa-users"></i> Team collaboration
+                    <div class="example-item" onclick="insertExample('Best ways to maintain heart health for adults')">
+                        <i class="fas fa-heartbeat"></i> Heart health
                     </div>
                 </div>
                 
-                <textarea id="user-requirements" rows="5" placeholder="Example: I need a video editing software for beginners that's free to use and works on Windows..." required></textarea>
+                <textarea id="user-requirements" rows="5" placeholder="Example: I want tips for reducing stress and anxiety naturally..." required></textarea>
                 
                 <div class="form-footer">
                     <button type="submit" class="pulse-animation">
-                        <i class="fas fa-search"></i> Get Personalized Recommendations
+                        <i class="fas fa-search"></i> Get Health Recommendations
                     </button>
                     <div class="trust-badges">
                         <span><i class="fas fa-shield-alt"></i> Privacy First</span>
@@ -263,24 +263,24 @@
                 <div class="engagement-card" onclick="showMostSearched()">
                     <i class="fas fa-chart-line"></i>
                     <h4>Explore Trending</h4>
-                    <p>See what others are searching for</p>
+                    <p>See what others are asking</p>
                 </div>
                 <div class="engagement-card" onclick="showCommunityTips()">
                     <i class="fas fa-users"></i>
-                    <h4>Community Tips</h4>
+                    <h4>Community Support</h4>
                     <p>Learn from other users</p>
                 </div>
                 <div class="engagement-card" onclick="showTutorials()">
                     <i class="fas fa-graduation-cap"></i>
                     <h4>Getting Started</h4>
-                    <p>New to software? Start here</p>
+                    <p>New to healthcare? Start here</p>
                 </div>
             </div>
         </section>
         
         <!-- Results Section -->
         <section id="results" class="form-section hidden animate__animated animate__fadeIn">
-            <h2>Recommended Software</h2>
+            <h2>Recommended Health Resources</h2>
             <div id="software-response" class="software-list"></div>
             <button onclick="showRecommendations()" class="secondary-btn">New Search <i class="fas fa-redo"></i></button>
         </section>
@@ -289,15 +289,15 @@
             <div class="help-content">
                 <h3>How to use this system:</h3>
                 <ol>
-                    <li>Describe your software needs in the search box</li>
-                    <li>Click "Get Recommendations for eSports Team manager"</li>
-                    <li>Review the suggested software options</li>
+                    <li>Describe your health concern or question in the search box</li>
+                    <li>Click "Get Health Recommendations"</li>
+                    <li>Review the suggested advice or resources</li>
                     <li>Use the navigation to explore more features</li>
                 </ol>
                 <h3>FAQs</h3>
                 <div class="faq-item">
                     <h4>How are recommendations generated?</h4>
-                    <p>Our system uses AI to analyze your requirements and match them with the most suitable software options.</p>
+                    <p>Our system uses AI to analyze your health query and match it with trusted resources and advice.</p>
                 </div>
                 <div class="faq-item">
                     <h4>Can I save my search history?</h4>
@@ -309,82 +309,57 @@
         <section id="history" class="form-section hidden animate__animated animate__fadeIn">
             <h2>Your Search History</h2>
             <div id="history-list" class="history-content">
-                <!-- History items will be populated here -->
                 <p class="empty-history">No search history yet. Your searches will appear here.</p>
             </div>
         </section>
         <section id="most-searched" class="form-section hidden animate__animated animate__fadeIn">
-            <h2>Most Searched Software Worldwide</h2>
+            <h2>Most Searched Health Topics</h2>
             <div class="software-grid">
-                <div class="software-card" onclick="viewSoftware('vscode')">
+                <div class="software-card" onclick="viewSoftware('diabetes')">
                     <div class="software-icon">
-                        <img src="https://cdn-icons-png.flaticon.com/512/5968/5968292.png" alt="VS Code">
+                        <img src="https://cdn-icons-png.flaticon.com/512/3774/3774299.png" alt="Diabetes">
                     </div>
-                    <h3>Visual Studio Code</h3>
-                    <p>Free source-code editor by Microsoft</p>
+                    <h3>Diabetes Management</h3>
+                    <p>Advice and resources for diabetes care</p>
                     <div class="software-tags">
-                        <span class="tag">Editor</span>
-                        <span class="tag">Free</span>
+                        <span class="tag">Condition</span>
+                        <span class="tag">Advice</span>
                     </div>
                 </div>
                 
-                <div class="software-card" onclick="viewSoftware('photoshop')">
+                <div class="software-card" onclick="viewSoftware('mentalhealth')">
                     <div class="software-icon">
-                        <img src="https://cdn-icons-png.flaticon.com/512/5968/5968520.png" alt="Photoshop">
+                        <img src="https://cdn-icons-png.flaticon.com/512/3062/3062634.png" alt="Mental Health">
                     </div>
-                    <h3>Adobe Photoshop</h3>
-                    <p>Industry-standard image editing software</p>
+                    <h3>Mental Wellness</h3>
+                    <p>Resources for mental health support</p>
                     <div class="software-tags">
-                        <span class="tag">Design</span>
-                        <span class="tag">Paid</span>
+                        <span class="tag">Wellness</span>
+                        <span class="tag">Support</span>
                     </div>
                 </div>
                 
-                <div class="software-card" onclick="viewSoftware('excel')">
+                <div class="software-card" onclick="viewSoftware('hearthealth')">
                     <div class="software-icon">
-                        <img src="https://cdn-icons-png.flaticon.com/512/732/732220.png" alt="Excel">
+                        <img src="https://cdn-icons-png.flaticon.com/512/3774/3774299.png" alt="Heart Health">
                     </div>
-                    <h3>Microsoft Excel</h3>
-                    <p>Spreadsheet software for data analysis</p>
+                    <h3>Heart Health</h3>
+                    <p>Prevention and lifestyle tips</p>
                     <div class="software-tags">
-                        <span class="tag">Productivity</span>
-                        <span class="tag">Paid</span>
+                        <span class="tag">Condition</span>
+                        <span class="tag">Tips</span>
                     </div>
                 </div>
                 
-                <div class="software-card" onclick="viewSoftware('autocad')">
+                <div class="software-card" onclick="viewSoftware('womenshealth')">
                     <div class="software-icon">
-                        <img src="https://cdn-icons-png.flaticon.com/512/5968/5968313.png" alt="AutoCAD">
+                        <img src="https://cdn-icons-png.flaticon.com/512/3774/3774299.png" alt="Women's Health">
                     </div>
-                    <h3>AutoCAD</h3>
-                    <p>CAD software for 2D and 3D design</p>
+                    <h3>Women's Health</h3>
+                    <p>Advice and screenings</p>
                     <div class="software-tags">
-                        <span class="tag">Engineering</span>
-                        <span class="tag">Paid</span>
-                    </div>
-                </div>
-                
-                <div class="software-card" onclick="viewSoftware('figma')">
-                    <div class="software-icon">
-                        <img src="https://cdn-icons-png.flaticon.com/512/5968/5968705.png" alt="Figma">
-                    </div>
-                    <h3>Figma</h3>
-                    <p>Collaborative interface design tool</p>
-                    <div class="software-tags">
-                        <span class="tag">Design</span>
-                        <span class="tag">Freemium</span>
-                    </div>
-                </div>
-                
-                <div class="software-card" onclick="viewSoftware('blender')">
-                    <div class="software-icon">
-                        <img src="https://cdn-icons-png.flaticon.com/512/5968/5968819.png" alt="Blender">
-                    </div>
-                    <h3>Blender</h3>
-                    <p>Free 3D creation suite</p>
-                    <div class="software-tags">
-                        <span class="tag">3D</span>
-                        <span class="tag">Free</span>
+                        <span class="tag">Women's Health</span>
+                        <span class="tag">Advice</span>
                     </div>
                 </div>
             </div>
@@ -397,560 +372,6 @@
         </button>
     </div>
     
-    <script>
-        // DOM Elements
-        function showHelp() {
-            showSection('help');
-            setActiveNavButton('help');
-        }
-        
-        function showHistory() {
-            showSection('history');
-            setActiveNavButton('history');
-            loadHistory();
-        }
-        
-        function setActiveNavButton(section) {
-            document.querySelectorAll('.nav-btn').forEach(btn => {
-                btn.classList.remove('active');
-            });
-            
-            if (section === 'recommendations') {
-                document.querySelector('.nav-btn:nth-child(1)').classList.add('active');
-            } else if (section === 'help') {
-                document.querySelector('.nav-btn:nth-child(2)').classList.add('active');
-            } else if (section === 'history') {
-                document.querySelector('.nav-btn:nth-child(3)').classList.add('active');
-            }
-        }
-        
-        function loadHistory() {
-            const historyList = document.getElementById('history-list');
-            // In a real app, you would fetch this from a database
-            const history = JSON.parse(localStorage.getItem('searchHistory')) || [];
-            
-            if (history.length === 0) {
-                historyList.innerHTML = '<p class="empty-history">No search history yet. Your searches will appear here.</p>';
-                return;
-            }
-            
-            historyList.innerHTML = '';
-            history.forEach((item, index) => {
-                const historyItem = document.createElement('div');
-                historyItem.className = 'history-item';
-                historyItem.innerHTML = `
-                    <div class="history-query">${item.query}</div>
-                    <div class="history-date">${new Date(item.timestamp).toLocaleString()}</div>
-                    <button onclick="viewHistoryItem(${index})" class="view-btn">
-                        <i class="fas fa-eye"></i> View
-                    </button>
-                `;
-                historyList.appendChild(historyItem);
-            });
-        }
-        
-        function viewHistoryItem(index) {
-            const history = JSON.parse(localStorage.getItem('searchHistory')) || [];
-            if (history[index]) {
-                document.getElementById('user-requirements').value = history[index].query;
-                showRecommendations();
-            }
-        }
-        
-        // Update the showRecommendations function to save history
-        function showRecommendations() {
-            showSection('recommendations');
-            setActiveNavButton('recommendations');
-            
-            // Add animation to form when first shown
-            const form = document.getElementById('recommendations-form');
-            form.classList.add('animate__animated', 'animate__fadeInUp');
-            
-            // Show welcome message if first time
-            if (!localStorage.getItem('welcomeShown')) {
-                setTimeout(() => {
-                    showWelcomeTooltip();
-                    localStorage.setItem('welcomeShown', 'true');
-                }, 1000);
-            }
-        }
-        
-        function showWelcomeTooltip() {
-            const tooltip = document.createElement('div');
-            tooltip.className = 'welcome-tooltip animate__animated animate__bounce';
-            tooltip.innerHTML = `
-                <div class="tooltip-content">
-                    <h3>Welcome to Software Finder! 👋</h3>
-                    <p>Tell us what you need and we'll recommend the perfect software for you.</p>
-                    <button onclick="this.parentElement.parentElement.remove()">Got it!</button>
-                </div>
-                <div class="tooltip-arrow"></div>
-            `;
-            document.getElementById('recommendations').appendChild(tooltip);
-            
-            // Position near the textarea
-            const textarea = document.getElementById('user-requirements');
-            const rect = textarea.getBoundingClientRect();
-            tooltip.style.top = `${rect.top - 120}px`;
-            tooltip.style.left = `${rect.left}px`;
-        }
-        
-        function showExamples() {
-            const dropdown = document.getElementById('examples-dropdown');
-            dropdown.classList.toggle('hidden');
-            
-            if (!dropdown.classList.contains('hidden')) {
-                dropdown.classList.add('animate__animated', 'animate__fadeIn');
-            }
-        }
-        
-        function insertExample(text) {
-            document.getElementById('user-requirements').value = text;
-            document.getElementById('examples-dropdown').classList.add('hidden');
-        }
-        
-        // Update the recommendations form submission to save history
-        document.getElementById('recommendations-form').addEventListener('submit', async function(e) {
-            e.preventDefault();
-            const requirements = document.getElementById('user-requirements').value;
-            
-            // Save to history
-            const history = JSON.parse(localStorage.getItem('searchHistory')) || [];
-            history.unshift({
-                query: requirements,
-                timestamp: new Date().getTime()
-            });
-            localStorage.setItem('searchHistory', JSON.stringify(history));
-            
-            // Rest of the existing submission code...
-        });
-        
-        // Update the initialization to show nav when logged in
-        document.addEventListener('DOMContentLoaded', () => {
-            const isLoggedIn = false; // This would come from your auth system
-            
-            if (isLoggedIn) {
-                profileIcon.classList.remove('hidden');
-                document.getElementById('main-nav').classList.remove('hidden');
-                showSection('recommendations');
-                setActiveNavButton('recommendations');
-            } else {
-                showSection('signup');
-            }
-        });
-        
-        // Update the login function to show nav after login
-        document.getElementById('login-form').addEventListener('submit', function(e) {
-            e.preventDefault();
-            // Simulate successful login
-            document.getElementById('login-error').classList.add('hidden');
-            profileIcon.classList.remove('hidden');
-            document.getElementById('main-nav').classList.remove('hidden');
-            showSection('recommendations');
-            setActiveNavButton('recommendations');
-        });
-        
-        // Update the logout function to hide nav
-        function logoutUser() {
-            profileIcon.classList.add('hidden');
-            document.getElementById('main-nav').classList.add('hidden');
-            showSection('login');
-            profileMenu.classList.remove('show');
-            
-            // Show logout message
-            const loginError = document.getElementById('login-error');
-            loginError.textContent = "You have been successfully logged out.";
-            loginError.classList.remove('error');
-            loginError.classList.add('success');
-            loginError.classList.remove('hidden');
-            
-            setTimeout(() => {
-                loginError.classList.add('hidden');
-            }, 5000);
-        }
-
-        const profileIcon = document.getElementById('profile-icon');
-        const profileMenu = document.getElementById('profile-menu');
-        const sections = {
-            signup: document.getElementById('signup'),
-            login: document.getElementById('login'),
-            forgotPassword: document.getElementById('forgot-password'),
-            profile: document.getElementById('profile'),
-            updateProfile: document.getElementById('update-profile'),
-            updatePassword: document.getElementById('update-password'),
-            recommendations: document.getElementById('recommendations'),
-            results: document.getElementById('results')
-        };
-        
-        let previousSection = '';
-        
-        // Toggle profile menu
-        profileIcon.addEventListener('click', (e) => {
-            e.stopPropagation();
-            profileMenu.classList.toggle('show');
-        });
-        
-        // Close profile menu when clicking outside
-        document.addEventListener('click', () => {
-            profileMenu.classList.remove('show');
-        });
-        
-        // Enhanced showSection function with navigation tracking
-        function showSection(sectionId) {
-            // Store current section before changing
-            const currentVisible = Object.values(sections).find(section => !section.classList.contains('hidden'));
-            if (currentVisible) {
-                previousSection = currentVisible.id;
-            }
-            
-            // Hide all sections
-            Object.values(sections).forEach(section => {
-                section.classList.add('hidden');
-            });
-            
-            // Show the requested section
-            const section = document.getElementById(sectionId);
-            section.classList.remove('hidden');
-            section.classList.add('animate__animated', 'animate__fadeIn');
-            
-            // Scroll to top
-            window.scrollTo(0, 0);
-        }
-        function showMostSearched() {
-            showSection('most-searched');
-            setActiveNavButton('most-searched');
-            document.getElementById('history').classList.add('hidden');
-        }
-        document.querySelectorAll('.nav-btn').forEach(button => {
-    button.addEventListener('dblclick', function() {
-        // Undo the action by going back to recommendations
-        showRecommendations();
-    });
-});
-    function setActiveNavButton(section) {
-    document.querySelectorAll('.nav-btn').forEach(btn => {
-        btn.classList.remove('active');
-    });
-    
-    const buttons = document.querySelectorAll('.nav-btn');
-    if (section === 'recommendations') {
-        buttons[0].classList.add('active');
-    } else if (section === 'most-searched') {
-        buttons[1].classList.add('active');
-    } else if (section === 'history') {
-        buttons[2].classList.add('active');
-    } else if (section === 'help') {
-        buttons[3].classList.add('active');
-    }
-}
-        // Update setActiveNavButton to handle most-searched
-        function setActiveNavButton(section) {
-            document.querySelectorAll('.nav-btn').forEach(btn => {
-                btn.classList.remove('active');
-            });
-            
-            const buttons = document.querySelectorAll('.nav-btn');
-            if (section === 'recommendations') {
-                buttons[0].classList.add('active');
-            } else if (section === 'most-searched') {
-                buttons[1].classList.add('active');
-            } else if (section === 'help') {
-                buttons[2].classList.add('active');
-            } else if (section === 'history') {
-                buttons[3].classList.add('active');
-            }
-        }
-        
-        // Add this function to handle software card clicks
-        function viewSoftware(softwareId) {
-            let description = "";
-            switch(softwareId) {
-                case 'vscode':
-                    description = "Visual Studio Code is a free, open-source code editor developed by Microsoft. It includes support for debugging, embedded Git control, syntax highlighting, intelligent code completion, snippets, and code refactoring.";
-                    break;
-                case 'photoshop':
-                    description = "Adobe Photoshop is a raster graphics editor developed by Adobe Inc. It is used for image editing, graphic design, and digital art. It uses a layer-based editing system that enables complex image manipulation.";
-                    break;
-                case 'excel':
-                    description = "Microsoft Excel is a spreadsheet program included in the Microsoft Office suite. It features calculation, graphing tools, pivot tables, and a macro programming language called Visual Basic for Applications.";
-                    break;
-                case 'autocad':
-                    description = "AutoCAD is a commercial computer-aided design (CAD) and drafting software application. It's used across industries for 2D and 3D design and drafting, including architecture, engineering, and construction.";
-                    break;
-                case 'figma':
-                    description = "Figma is a vector graphics editor and prototyping tool that is primarily web-based. It enables teams to collaborate in real-time on interface design projects with cloud storage of files.";
-                    break;
-                case 'blender':
-                    description = "Blender is a free and open-source 3D computer graphics software toolset used for creating animated films, visual effects, art, 3D printed models, motion graphics, interactive 3D applications, and computer games.";
-                    break;
-            }
-            
-            document.getElementById('software-response').innerHTML = `
-                <div class="software-detail">
-                    <h3>${document.querySelector(`.software-card[onclick="viewSoftware('${softwareId}')"] h3`).textContent}</h3>
-                    <p>${description}</p>
-                    <div class="software-meta">
-                        <div><strong>Category:</strong> ${document.querySelector(`.software-card[onclick="viewSoftware('${softwareId}')"] .tag`).textContent}</div>
-                        <div><strong>Price:</strong> ${document.querySelector(`.software-card[onclick="viewSoftware('${softwareId}')"] .tag:nth-child(2)`).textContent}</div>
-                    </div>
-                    <button onclick="showMostSearched()" class="secondary-btn">
-                        <i class="fas fa-arrow-left"></i> Back to Most Searched
-                    </button>
-                </div>
-            `;
-            showSection('results');
-        }
-        
-        // Back navigation functions
-        function backToDashboard() {
-            showSection('recommendations');
-        }
-        
-        function backToProfile() {
-            showSection('profile');
-        }
-        
-        // Navigation functions
-        function showSignup() {
-            showSection('signup');
-        }
-        
-        function showLogin() {
-            showSection('login');
-        }
-        
-        function showForgotPassword() {
-            showSection('forgot-password');
-        }
-        
-        function viewProfile() {
-            previousSection = document.querySelector('.form-section:not(.hidden)').id;
-            document.getElementById('display-username').textContent = "John Doe";
-            document.getElementById('display-email').textContent = "john.doe@example.com";
-            document.getElementById('display-created').textContent = new Date().toLocaleDateString();
-            showSection('profile');
-            profileMenu.classList.remove('show');
-        }
-        
-        function showUpdateProfile() {
-            previousSection = 'profile';
-            document.getElementById('update-name').value = "John Doe";
-            document.getElementById('update-email').value = "john.doe@example.com";
-            showSection('update-profile');
-            profileMenu.classList.remove('show');
-        }
-        
-        function showUpdatePassword() {
-            previousSection = 'profile';
-            showSection('update-password');
-            profileMenu.classList.remove('show');
-        }
-        
-        function showRecommendations() {
-            showSection('recommendations');
-        }
-        
-        function logoutUser() {
-            // In a real app, you would handle logout logic here
-            profileIcon.classList.add('hidden');
-            showSection('login');
-            profileMenu.classList.remove('show');
-            
-            // Show logout message
-            const loginError = document.getElementById('login-error');
-            loginError.textContent = "You have been successfully logged out.";
-            loginError.classList.remove('error');
-            loginError.classList.add('success');
-            loginError.classList.remove('hidden');
-            
-            // Remove the message after 5 seconds
-            setTimeout(() => {
-                loginError.classList.add('hidden');
-            }, 5000);
-        }
-        
-        // Form submissions
-        document.getElementById('signup-form').addEventListener('submit', function(e) {
-            e.preventDefault();
-            const errorElement = document.getElementById('signup-error');
-            
-            // Simple validation
-            const password = document.getElementById('signup-password').value;
-            if (password.length < 8) {
-                errorElement.textContent = "Password must be at least 8 characters long.";
-                errorElement.classList.remove('hidden');
-                errorElement.classList.add('animate__animated', 'animate__shakeX');
-                return;
-            }
-            
-            // Simulate successful signup
-            errorElement.classList.add('hidden');
-            profileIcon.classList.remove('hidden');
-            showSection('recommendations');
-        });
-        
-        document.getElementById('login-form').addEventListener('submit', function(e) {
-            e.preventDefault();
-            const errorElement = document.getElementById('login-error');
-            
-            // Simulate successful login
-            errorElement.classList.add('hidden');
-            profileIcon.classList.remove('hidden');
-            showSection('recommendations');
-        });
-        
-        document.getElementById('forgot-password-form').addEventListener('submit', function(e) {
-            e.preventDefault();
-            const errorElement = document.getElementById('reset-error');
-            
-            // Simulate successful password reset request
-            errorElement.textContent = "Password reset link has been sent to your email.";
-            errorElement.classList.remove('error');
-            errorElement.classList.add('success');
-            errorElement.classList.remove('hidden');
-        });
-        
-        document.getElementById('update-profile-form').addEventListener('submit', function(e) {
-            e.preventDefault();
-            
-            // Simulate profile update
-            document.getElementById('display-username').textContent = document.getElementById('update-name').value;
-            document.getElementById('display-email').textContent = document.getElementById('update-email').value;
-            showSection('profile');
-        });
-        
-        document.getElementById('update-password-form').addEventListener('submit', function(e) {
-            e.preventDefault();
-            const errorElement = document.getElementById('password-error');
-            const newPassword = document.getElementById('new-password').value;
-            const confirmPassword = document.getElementById('confirm-password').value;
-            
-            if (newPassword !== confirmPassword) {
-                errorElement.textContent = "Passwords do not match.";
-                errorElement.classList.remove('hidden');
-                errorElement.classList.add('animate__animated', 'animate__shakeX');
-                return;
-            }
-            
-            if (newPassword.length < 8) {
-                errorElement.textContent = "Password must be at least 8 characters long.";
-                errorElement.classList.remove('hidden');
-                errorElement.classList.add('animate__animated', 'animate__shakeX');
-                return;
-            }
-            
-            // Simulate successful password change
-            errorElement.textContent = "Password changed successfully!";
-            errorElement.classList.remove('error');
-            errorElement.classList.add('success');
-            errorElement.classList.remove('hidden');
-            
-            // Clear form
-            this.reset();
-        });
-        
-        document.getElementById('recommendations-form').addEventListener('submit', async function(e) {
-            e.preventDefault();
-            const requirements = document.getElementById('user-requirements').value;
-            const responseElement = document.getElementById('software-response');
-            
-            // Show loading state
-            responseElement.innerHTML = '<p class="loading-text">Finding the best software for you</p>';
-            showSection('results');
-            
-            try {
-                // Make API call to your Flask backend
-                const response = await fetch('https://aiproject-e9f3.onrender.com/get_recommendations', {
-                    method: 'POST',
-                    headers: {
-                        'Content-Type': 'application/json',
-                    },
-                    body: JSON.stringify({ prompt: requirements })
-                });
-                
-                if (!response.ok) {
-                    throw new Error('Network response was not ok');
-                }
-                
-                const data = await response.json();
-                
-                if (data.status === 'error') {
-                    throw new Error(data.error);
-                }
-                
-                // Display the recommendations from the API
-                responseElement.innerHTML = formatRecommendations(data.recommendations);
-                
-            } catch (error) {
-                responseElement.innerHTML = `
-                    <div class="error">
-                        <i class="fas fa-exclamation-triangle"></i>
-                        <p>Error getting recommendations: ${error.message}</p>
-                    </div>
-                    <button onclick="showRecommendations()" class="secondary-btn">Try Again <i class="fas fa-redo"></i></button>
-                `;
-            }
-        });
-
-        function formatRecommendations(text) {
-            let html = text.replace(/\*\*(.*?)\*\*/g, '<strong>$1</strong>');
-            html = html.replace(/\n/g, '<br>');
-            return `<div class="api-response">${html}</div>
-                    <button onclick="showRecommendations()" class="secondary-btn">New Search <i class="fas fa-redo"></i></button>`;
-        };
-        
-        // Dark mode toggle
-        function toggleDarkMode() {
-            document.body.classList.toggle('dark-mode');
-            const toggleBtn = document.querySelector('.toggle-btn');
-            
-            if (document.body.classList.contains('dark-mode')) {
-                toggleBtn.innerHTML = '<i class="fas fa-sun"></i>';
-                localStorage.setItem('darkMode', 'enabled');
-            } else {
-                toggleBtn.innerHTML = '<i class="fas fa-moon"></i>';
-                localStorage.setItem('darkMode', 'disabled');
-            }
-        }
-        
-        // Check for saved dark mode preference
-        if (localStorage.getItem('darkMode') === 'enabled') {
-            document.body.classList.add('dark-mode');
-            document.querySelector('.toggle-btn').innerHTML = '<i class="fas fa-sun"></i>';
-        }
-        document.addEventListener('DOMContentLoaded', () => {
-            // Add pulse animation to the submit button periodically
-            setInterval(() => {
-                const submitBtn = document.querySelector('.pulse-animation');
-                if (submitBtn) {
-                    submitBtn.classList.add('animate__animated', 'animate__pulse');
-                    setTimeout(() => {
-                        submitBtn.classList.remove('animate__animated', 'animate__pulse');
-                    }, 1000);
-                }
-            }, 5000);
-        });
-        
-        // Initialize
-        document.addEventListener('DOMContentLoaded', () => {
-            const isLoggedIn = false;
-            
-            if (isLoggedIn) {
-                profileIcon.classList.remove('hidden');
-                showSection('recommendations');
-            } else {
-                showSection('signup');
-            }
-        });
-        
-        // Social login functions (placeholder)
-        function signInWithGoogle() {
-            alert("In a real app, this would connect to Google authentication");
-        }
-        
-        function signInWithFacebook() {
-            alert("In a real app, this would connect to Facebook authentication");
-        }
-    </script>
+    <script src="healthcare-chatbot.js"></script>
 </body>
 </html>

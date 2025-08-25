@@ -1,5 +1,5 @@
 // API Key setup
-const API_KEY = "AIzaSyAqJXj39JAabzqLXsPykvwe6q6u4KYWPb4";
+const API_KEY = "AIzaSyB000JJvPeDCcIMUTEe2wvwo7CSv49X1g4";
 
 async function getEsportsTeamManagerRecommendations() {
     try {
