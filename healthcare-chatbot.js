@@ -245,7 +245,7 @@ document.getElementById('recommendations-form').addEventListener('submit', async
     showSection('results');
     try {
         // NOTE: Change this endpoint to your healthcare backend API!
-        const response = await fetch('http://127.0.0.1:5001/answer_prompt', {
+        const response = await fetch('https://software-recommendation-system-1.onrender.com/answer_prompt', {
     method: 'POST',
     headers: { 'Content-Type': 'application/json' },
     body: JSON.stringify({ prompt: requirements })
